@@ -37,7 +37,7 @@ ul {
 }
 
 img {
-  max-width: 30%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -66,6 +66,10 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.logo img{
+  width: 15%;
 }
 
 .logo h1 {
