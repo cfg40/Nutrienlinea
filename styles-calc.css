@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container-calc {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.descripcion {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+.calculadora {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #f3d034;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    display: block;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #f85725;
+}
+
+#resultado {
+    background-color: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.oculto {
+    display: none;
+}
+
+.resultado-info {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.resultado-info p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#imcCategoria {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.escala-imc {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.barra-imc {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.categoria {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 5px;
+}
+
+.bajo-peso {
+    background-color: #3498db;
+    width: 25%;
+}
+
+.normal {
+    background-color: #2ecc71;
+    width: 25%;
+}
+
+.sobrepeso {
+    background-color: #f39c12;
+    width: 25%;
+}
+
+.obesidad {
+    background-color: #e74c3c;
+    width: 25%;
+}
+
+.imc-descripcion {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    border-left: 4px solid #3498db;
+}
+
+.descripcion-con-imagen {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.imagen-imc {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto-descripcion {
+    flex: 1;
+}
+
+.imc-valor-indicador {
+    position: absolute;
+    top: -35px;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.imc-valor-indicador::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+#nuevoCalculo {
+    margin-top: 20px;
+    background-color: #2ecc71;
+}
+
+#nuevoCalculo:hover {
+    background-color: #27ae60;
+}

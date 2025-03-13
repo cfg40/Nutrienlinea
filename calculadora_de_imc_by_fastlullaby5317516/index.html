@@ -1,0 +1,59 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="img/logo.png" alt="Calculadora de IMC" class="imagen">
+        <h1>Calculadora de IMC</h1>
+        <p class="descripcion">El índice de masa corporal (IMC) es una medida del peso de una persona en relación con su altura. Es utilizado como un indicador para evaluar el estado de peso de una persona.</p>
+        
+        <div class="calculadora">
+            <form id="formIMC">
+                <div class="campo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                
+                <div class="campo">
+                    <label for="altura">Altura (cm):</label>
+                    <input type="number" id="altura" min="50" max="300" required>
+                </div>
+                
+                <div class="campo">
+                    <label for="peso">Peso (kg):</label>
+                    <input type="number" id="peso" min="10" max="500" step="0.1" required>
+                </div>
+                
+                <button type="submit" id="calcular">Calcular IMC</button>
+            </form>
+        </div>
+        
+        <div id="resultado" class="oculto">
+            <h2>Resultados</h2>
+            <div class="resultado-info">
+                <p id="nombreResultado"></p>
+                <p id="imcValor"></p>
+                <p id="imcCategoria"></p>
+                <div class="escala-imc">
+                    <div id="imcValorIndicador" class="imc-valor-indicador"></div>
+                    <div id="indicador"></div>
+                    <div class="barra-imc">
+                        <div class="categoria bajo-peso">Bajo peso</div>
+                        <div class="categoria normal">Normal</div>
+                        <div class="categoria sobrepeso">Sobrepeso</div>
+                        <div class="categoria obesidad">Obesidad</div>
+                    </div>
+                </div>
+                <div class="imc-descripcion" id="imcDescripcion"></div>
+            </div>
+            <button id="nuevoCalculo">Nuevo cálculo</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

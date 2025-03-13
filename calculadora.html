@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Cynthia Fuentes Nutricionista</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="styles-calc.css">
+  <script src="script-calc.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/logo.png">
+      <h1>Cynthia Fuentes</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="talleres-grabados.html">Talleres Grabados</a></li>
+        <li><a href="calculadora.html" class="active">Calculadora</a></li>
+        <li><a href="contacto.html" >Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container">
+        <h2>CALCULADORA IMC</h2>
+        <p>Calcula tu Índice de Masa Corporal (IMC) y descubre si tu peso es saludable. Ingresa tus datos y obtén tu resultado al instante.</p>
+      </div>
+    </section>
+
+       
+    <div class="container-calc">
+      
+      <img src="img/logo.png" alt="Calculadora IMC">
+
+      <div class="calculadora">
+          <form id="formIMC">
+              <div class="campo">
+                  <label for="nombre">Nombre:</label>
+                  <input type="text" id="nombre" required>
+              </div>
+              
+              <div class="campo">
+                  <label for="altura">Altura (cm):</label>
+                  <input type="number" id="altura" min="50" max="300" required>
+              </div>
+              
+              <div class="campo">
+                  <label for="peso">Peso (kg):</label>
+                  <input type="number" id="peso" min="10" max="500" step="0.1" required>
+              </div>
+              
+              <button type="submit" id="calcular">Calcular IMC</button>
+          </form>
+      </div>
+      
+      <div id="resultado" class="oculto">
+          <h2>Resultados</h2>
+          <div class="resultado-info">
+              <p id="nombreResultado"></p>
+              <p id="imcValor"></p>
+              <p id="imcCategoria"></p>
+              <div class="escala-imc">
+                  <div id="imcValorIndicador" class="imc-valor-indicador"></div>
+                  <div id="indicador"></div>
+                  <div class="barra-imc">
+                      <div class="categoria bajo-peso">Bajo peso</div>
+                      <div class="categoria normal">Normal</div>
+                      <div class="categoria sobrepeso">Sobrepeso</div>
+                      <div class="categoria obesidad">Obesidad</div>
+                  </div>
+              </div>
+              <div class="imc-descripcion" id="imcDescripcion"></div>
+          </div>
+          <button id="nuevoCalculo">Nuevo cálculo</button>
+      </div>
+  </div>
+  
+  <script src="script.js"></script>
+
+
+    </section>
+   
+
+   <br>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Cynthia Fuentes - Nutricionista</p>
+      <div class="social-icons">
+                <a href="https://www.instagram.com/nutrienlinea28?igsh=NTU4b3pmbnE4Zzc1" aria-label="Instagram">
+          <svg width="24" height="24" viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+          </svg>
+        </a>
+        <a href="https://web.facebook.com/profile.php?id=100053269314139" aria-label="Facebook">
+          <svg width="24" height="24" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M16,12 L13,12 L13,18 L10,18 L10,12 L8,12 L8,9 L10,9 L10,7.5 C10,5.5 11,4 13.5,4 L16,4 L16,7 L14.5,7 C13.5,7 13,7.5 13,8.5 L13,9 L16,9 L16,12 Z" fill="none" stroke="currentColor" stroke-width="1"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="24" height="24" viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M8,10 L8,16 M8,7 L8,7.01 M12,16 L12,12 M16,16 L16,13 C16,11.5 15,10 13,10 C12,10 11,10.5 10.5,11.5 L10.5,10" fill="none" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
