@@ -70,6 +70,7 @@ button {
     display: block;
     width: 100%;
     transition: background-color 0.3s;
+    text-decoration: none;
 }
 
 button:hover {
@@ -205,5 +206,14 @@ button:hover {
 }
 
 #nuevoCalculo:hover {
+    background-color: #27ae60;
+}
+
+#solicitarPlan {
+    margin-top: 20px;
+    background-color: #dd151f;
+}
+
+#solicitarPlan:hover {
     background-color: #27ae60;
 }
