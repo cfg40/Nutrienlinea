@@ -1,0 +1,99 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TALLERES GRABADOS - NUTRIENLINEA</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="login-overlay" class="login-overlay">
+        <div class="login-container">
+            <h2>TALLERES GRABADOS - NUTRIENLINEA</h2>
+            <div id="login-error" class="login-error"></div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" required placeholder="tu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" required placeholder="Contraseña">
+                </div>
+                <button type="submit" class="login-button">Ingresar</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="app-container" style="display: none;">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h1>Mi Academia</h1>
+                <div class="logo-container">
+                    <img src="/logo.png" alt="Nutri en Línea Logo">
+                    <div class="app-title">TALLERES GRABADOS - NUTRIENLINEA</div>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="user-name">Usuario</span>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <h3>Mis Cursos</h3>
+                <ul id="courses-list">
+                    <!-- Los cursos se cargarán desde JavaScript -->
+                </ul>
+            </div>
+        </nav>
+        <main class="content">
+            <div class="content-header">
+                <div class="course-info">
+                    <h2 id="current-course-title">Selecciona un curso</h2>
+                    <div class="course-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="course-progress"></div>
+                        </div>
+                        <span id="progress-text">0%</span>
+                    </div>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar lecciones...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+
+            <div class="course-content">
+                <div class="lessons-panel">
+                    <div class="lessons-header">
+                        <h3>Lecciones</h3>
+                        <button id="toggle-lessons"><i class="fas fa-chevron-left"></i></button>
+                    </div>
+                    <div class="modules-container" id="modules-container">
+                        <!-- Los módulos y lecciones se cargarán desde JavaScript -->
+                    </div>
+                </div>
+
+                <div class="video-container">
+                    <div id="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <p>Selecciona una lección para comenzar</p>
+                    </div>
+                    <div id="video-player" style="display: none;">
+                        <iframe id="video-iframe" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 id="current-lesson-title">Ninguna lección seleccionada</h3>
+                        <div class="video-actions">
+                            <button id="mark-complete"><i class="fas fa-check-circle"></i> Marcar como completada</button>
+                            <button id="next-lesson"><i class="fas fa-arrow-right"></i> Siguiente lección</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
