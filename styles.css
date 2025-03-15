@@ -38,6 +38,38 @@
   align-items: center;
 }
 
+.logo-nutricionista {
+  display: flex;
+  align-items:center; /* Centra los elementos */
+  text-align:center; /* Asegura que el texto esté centrado */
+}
+
+.logo {
+  width: 100px; /* Ajusta el tamaño del logo */
+}
+
+.info-nutricionista {
+  display: flex;
+  flex-direction:column; /* Hace que el texto esté en columna */
+}
+
+.nombre {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #f4a261;
+}
+
+.titulo {
+  font-weight: bold;
+  color: #2a2a2a;
+}
+
+.registro {
+  font-size: 0.8em;
+  color: #444;
+}
+
+
 :root {
   --primary: #ffaa5b;
   --primary-light: #ffd6a8;
@@ -195,7 +227,7 @@ nav ul li a.active {
 .page-banner {
   background-color: var(--primary-light);
   padding: 20px 0;
-  text-align: center;
+  text-align:center;
   color: var(--dark);
 }
 
@@ -511,7 +543,7 @@ nav ul li a.active {
   border-color: var(--primary);
 }
 
-/* Map Section */
+/* Map Section
 .map-section {
   display:flex
   justify-content: center;
@@ -525,7 +557,7 @@ nav ul li a.active {
   display: flex;
   overflow: hidden;
   justify-content: center;
-}
+} */
 
 /* Footer Section */
 footer {
