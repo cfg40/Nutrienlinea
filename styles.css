@@ -45,12 +45,14 @@
 }
 
 .logo {
-  width: 100px; /* Ajusta el tamaño del logo */
-}
+  width: 90px; /* Ajusta el tamaño del logo */
+  }
 
 .info-nutricionista {
   display: flex;
   flex-direction:column; /* Hace que el texto esté en columna */
+  line-height: 1.2;
+  
 }
 
 .nombre {
@@ -812,4 +814,15 @@ footer .container {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+}
+
+.credits {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
 }
