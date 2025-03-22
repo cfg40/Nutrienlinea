@@ -1,0 +1,94 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Hábitos Alimenticios</title>
+    <link rel="stylesheet" href="styles-test.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+        <header>
+            <div class="logo-nutricionista">
+                <img src="img/logo.png" alt="Nutri en Línea" class="logo">
+                <div class="info-nutricionista">
+                    <span class="nombre">Cynthia Fuentes</span>
+                    <span class="titulo">Nutricionista</span>
+                    <span class="registro">CNP 4000</span>
+                </div>
+             </div>
+            
+              <nav>
+                <ul>
+                  <li><a href="index.html">Inicio</a></li>
+                  <li><a href="servicios.html">Servicios</a></li>
+                  <li><a href="talleres-grabados.html">Talleres Grabados</a></li>
+                  <li><a href="calculadora.html">Calculadora</a></li>
+                  <li><a href="Test.html" class="active">Test Alimenticio</a></li>
+                  <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+              </nav>
+        </header>
+
+        <main>
+            <section class="page-banner">
+                <div>
+                    <h2>Test de Hábitos Alimenticios</h2>
+                    <p>Evalúa tu alimentación y descubre posibles deficiencias nutricionales</p>    
+                </div>
+            </section>
+           
+        </main>
+     
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="progress-steps">
+                <span class="step active">1</span>
+                <span class="step">2</span>
+                <span class="step">3</span>
+                <span class="step">4</span>
+                <span class="step">5</span>
+                <span class="step">6</span>
+                <span class="step">7</span>
+            </div>
+        </div>
+
+        <div id="test-container">
+            <div id="question-container">
+                <!-- Las preguntas se cargarán dinámicamente -->
+            </div>
+
+            <div id="results-container" class="hidden">
+                <h2>Resultados del Test</h2>
+                <div class="result-score">
+                    <span id="final-score">0</span> / 100
+                </div>
+                <div class="result-category">
+                    <h3 id="result-title">Evaluando resultados...</h3>
+                </div>
+                <div class="result-description">
+                    <p id="result-description"></p>
+                </div>
+                <div class="recommendations">
+                    <h3>Recomendaciones personalizadas:</h3>
+                    <ul id="recommendations-list">
+                    </ul>
+                </div>
+                <button id="restart-btn" class="btn">Reiniciar Test</button>
+                <BR>    
+                <BR>
+                <button class="btn-plan">
+                    <a href="https://wa.link/kru3j0" target="_blank">
+                    QUIERO MI PLAN NUTRICIONAL PERSONALIZADO
+                </button>
+            </div>           
+        </div>
+    
+    
+    <script src="config.js" type="module"></script>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
