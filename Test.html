@@ -1,96 +1,122 @@
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test de Hábitos Alimenticios</title>
-    <link rel="stylesheet" href="styles-test.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    
-        <header>
-            <div class="logo-nutricionista">
-                <img src="img/logo.png" alt="Nutri en Línea" class="logo">
-                <div class="info-nutricionista">
-                    <span class="nombre">Cynthia Fuentes</span>
-                    <span class="titulo">Nutricionista</span>
-                    <span class="registro">CNP 4000</span>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test de Hábitos Alimenticios</title>
+        <link rel="stylesheet" href="styles-test.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        
+            <header>
+                <div class="logo-nutricionista">
+                    <img src="img/logo.png" alt="Nutri en Línea" class="logo">
+                    <div class="info-nutricionista">
+                        <span class="nombre">Cynthia Fuentes</span>
+                        <span class="titulo">Nutricionista</span>
+                        <span class="registro">CNP 4000</span>
+                    </div>
                 </div>
-             </div>
-            
-              <nav>
-                <ul>
-                  <li><a href="index.html">Inicio</a></li>
-                  <li><a href="servicios.html">Servicios</a></li>
-                  <li><a href="talleres-grabados.html">Talleres Grabados</a></li>
-                  <li><a href="calculadora.html">Calculadora</a></li>
-                  <li><a href="Test.html" class="active">Test Alimenticio</a></li>
-                  <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-              </nav>
-        </header>
+                
+                <nav>
+                    <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="talleres-grabados.html">Talleres Grabados</a></li>
+                    <li><a href="calculadora.html">Calculadora</a></li>
+                    <li><a href="Test.html" class="active">Test Alimentario</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </header>
 
-        <main>
-            <section class="page-banner">
-                <div>
-                    <h2>Test de Hábitos Alimenticios</h2>
-                    <p>Evalúa tu alimentación y descubre posibles deficiencias nutricionales</p>    
+            <main>
+                <section class="page-banner">
+                    <div>
+                        <h2>Test de Hábitos Alimentarios</h2>
+                        <p>Evalúa tu alimentación y descubre posibles deficiencias nutricionales</p>    
+                    </div>
+                </section>
+            
+            </main>
+        
+                
+            <section class="test-section">
+
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="progress-steps">
+                        <span class="step active">1</span>
+                        <span class="step">2</span>
+                        <span class="step">3</span>
+                        <span class="step">4</span>
+                        <span class="step">5</span>
+                        <span class="step">6</span>
+                        <span class="step">7</span>
+                    </div>
+                </div>
+
+                <div id="test-container">
+                    <div id="question-container">
+                        <!-- Las preguntas se cargarán dinámicamente -->
+                    </div>
+
+                    <div id="results-container" class="hidden">
+                        <h2>Resultados del Test</h2>
+                        <div class="result-score">
+                            <span id="final-score">0</span> / 100
+                        </div>
+                        <div class="result-category">
+                            <h3 id="result-title">Evaluando resultados...</h3>
+                        </div>
+                        <div class="result-description">
+                            <p id="result-description"></p>
+                        </div>
+                        <div class="recommendations">
+                            <h3>Recomendaciones personalizadas:</h3>
+                            <ul id="recommendations-list">
+                            </ul>
+                        </div>
+                        <button id="restart-btn" class="btn">Reiniciar Test</button>
+                        <BR>    
+                        <BR>
+                        <button class="btn-plan">
+                            <a href="https://wa.link/kru3j0" target="_blank">
+                            QUIERO MI PLAN NUTRICIONAL PERSONALIZADO
+                        </button>
+                    </div>           
                 </div>
             </section>
-           
-        </main>
-     
-    <section class="test-section">
+        <script src="config.js" type="module"></script>
+        <script src="app.js" type="module"></script>
 
-        <div class="progress-container">
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
+        <footer>
+            <div class="container">
+              <p style="color: #ffcc00;">&copy; Diseñado por:<a href="https://cfg40.github.io/Cfgweb/" style="color: #fffffe;"> Cristhian Fuentes</a></p> 
+              <div class="social-icons">
+                <a href="https://www.instagram.com/nutrienlinea28?igsh=NTU4b3pmbnE4Zzc1" aria-label="Instagram">
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+                  </svg>
+                </a>
+                <a href="https://web.facebook.com/profile.php?id=100053269314139" aria-label="Facebook">
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M16,12 L13,12 L13,18 L10,18 L10,12 L8,12 L8,9 L10,9 L10,7.5 C10,5.5 11,4 13.5,4 L16,4 L16,7 L14.5,7 C13.5,7 13,7.5 13,8.5 L13,9 L16,9 L16,12 Z" fill="none" stroke="currentColor" stroke-width="1"/>
+                  </svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                  <svg width="24" height="24" viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8,10 L8,16 M8,7 L8,7.01 M12,16 L12,12 M16,16 L16,13 C16,11.5 15,10 13,10 C12,10 11,10.5 10.5,11.5 L10.5,10" fill="none" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </a>
+              </div>
             </div>
-            <div class="progress-steps">
-                <span class="step active">1</span>
-                <span class="step">2</span>
-                <span class="step">3</span>
-                <span class="step">4</span>
-                <span class="step">5</span>
-                <span class="step">6</span>
-                <span class="step">7</span>
-            </div>
-        </div>
-
-        <div id="test-container">
-            <div id="question-container">
-                <!-- Las preguntas se cargarán dinámicamente -->
-            </div>
-
-            <div id="results-container" class="hidden">
-                <h2>Resultados del Test</h2>
-                <div class="result-score">
-                    <span id="final-score">0</span> / 100
-                </div>
-                <div class="result-category">
-                    <h3 id="result-title">Evaluando resultados...</h3>
-                </div>
-                <div class="result-description">
-                    <p id="result-description"></p>
-                </div>
-                <div class="recommendations">
-                    <h3>Recomendaciones personalizadas:</h3>
-                    <ul id="recommendations-list">
-                    </ul>
-                </div>
-                <button id="restart-btn" class="btn">Reiniciar Test</button>
-                <BR>    
-                <BR>
-                <button class="btn-plan">
-                    <a href="https://wa.link/kru3j0" target="_blank">
-                    QUIERO MI PLAN NUTRICIONAL PERSONALIZADO
-                </button>
-            </div>           
-        </div>
-    </section>
-    
-    
-    <script src="config.js" type="module"></script>
-    <script src="app.js" type="module"></script>
-</body>
+          </footer>
+    </body>
 </html>
