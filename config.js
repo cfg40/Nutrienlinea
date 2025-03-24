@@ -81,7 +81,7 @@ export const questions = [
 export const resultCategories = [
     {
         min: 0,
-        max: 10,
+        max: 30,
         title: "Deficiencia grave en alimentación",
         description: "Tus hábitos alimenticios actuales podrían estar causando serias deficiencias nutricionales.",
         class: "danger",
@@ -94,8 +94,8 @@ export const resultCategories = [
         ]
     },
     {
-        min: 11,
-        max: 17,
+        min: 31,
+        max: 55,
         title: "Hábitos moderados pero mejorables",
         description: "Tienes algunos hábitos positivos, pero hay importantes áreas de mejora para alcanzar una nutrición adecuada.",
         class: "warning",
@@ -108,8 +108,8 @@ export const resultCategories = [
         ]
     },
     {
-        min: 18,
-        max: 23,
+        min: 56,
+        max: 75,
         title: "Buena alimentación con algunas fallas",
         description: "Tu alimentación es generalmente buena, pero hay aspectos específicos que podrías mejorar para mejorar tu nutrición.",
         class: "warning",
@@ -122,8 +122,8 @@ export const resultCategories = [
         ]
     },
     {
-        min: 24,
-        max: 28,
+        min: 76,
+        max: 100,
         title: "Alimentación balanceada",
         description: "¡Felicidades! Mantienes hábitos alimenticios muy saludables y balanceados, lo que beneficia tu salud general.",
         class: "success",
