@@ -244,6 +244,39 @@ nav ul li a.active {
   margin: 0 auto;
 }
 
+/* Portada Section */
+.fuenteh1 {
+  padding:20px 20px;
+  margin: 20 px;
+  font-size: 3rem;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff; /* Asegúrate de que el texto sea visible sobre la imagen */
+  text-align: center; 
+  line-height: 1.2; /* Reduce el espaciado vertical entre líneas */
+  background: linear-gradient(rgba(19, 18, 18, 0.4), rgba(0, 0, 0, 0.5)), 
+              url('img/fondo.webp'); /* Cambia la ruta según tu imagen */
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: 100vh; /* Hace que el contenedor ocupe toda la altura de la ventana */
+  display: flex;
+  align-items: center; /* Centra el contenido verticalmente */
+  justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+/* Media queries para hacer el h1 responsivo */
+@media (max-width: 768px) {
+  .fuenteh1 {
+    font-size: 2.5rem; /* Reduce el tamaño del texto en pantallas medianas */
+  }
+}
+
+@media (max-width: 480px) {
+  .fuenteh1 {
+    font-size: 2rem; /* Reduce aún más el tamaño del texto en pantallas pequeñas */
+  }
+}
+
 /* About Section */
 .about {
   padding: 20px 0;
