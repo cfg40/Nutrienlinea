@@ -1,0 +1,75 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>CocinaChef - Encuentra tu receta perfecta</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Tipografía suave y moderna de Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+    {
+      "imports": {
+        "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <span class="logo">
+        <img src="img/logo.png" width="80" alt="CocinaChef Logo">
+      </span>
+      <ul class="nav-links">
+        <li><a href="https://www.minutri.es" class="active">Volver al Inicio</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main id="app">
+    <section class="hero">
+     <div class="hero-image">
+      <img src="img/CYNTHIA.jpg" alt="CocinaChef">
+     </div> 
+      <div class="hero-content">
+        <h1>¿Qué cocino hoy?</h1>
+        <p>¡Descubre recetas deliciosas usando solo los ingredientes que tienes en casa! Escribe tus ingredientes separados por comas y sorpréndete con las opciones que tienes a tu alcance.</p>
+        <div class="input-group input-group-column">
+          <input v-model="ingredientesInput" @keyup.enter="buscarRecetas" type="text"
+                 placeholder="Ejemplo: huevo, tomate, queso, pan..." class="ingredient-input">
+          <button @click="buscarRecetas" class="btn-generar">Generar Recetas</button>
+        </div>
+      </div>
+    </section>
+    <section class="resultados" v-if="recetasFiltradas.length > 0">
+      <h2>Recetas encontradas</h2>
+      <div class="recetas-grid">
+        <div v-for="receta in recetasFiltradas" :key="receta.titulo" class="receta-carta">
+          <div class="receta-imagen">
+            <img :src="receta.imagen" alt="Imagen de {{ receta.titulo }}" class="imagen-receta">
+          </div>
+          <div class="receta-info">
+            <h3>{{ receta.titulo }}</h3>
+            <p><strong>Ingredientes:</strong> {{ receta.ingredientes }}</p>
+            <p><strong>Preparación:</strong> {{ receta.pasos }}</p>
+            <p><strong>Región:</strong> {{ receta.categoria_region }}</p>
+            <p><strong>Proteína:</strong> {{ receta.tipo_proteina }}</p>
+            <p><strong>Tiempo:</strong> {{ receta.tiempo_preparacion }}</p>
+            <p><strong>Porciones:</strong> {{ receta.porciones }}</p>
+            <p><strong>Dificultad:</strong> {{ receta.dificultad }}</p>
+          </div>  
+        </div>
+      </div>
+    </section>
+    <section class="resultados" v-else-if="buscaste">
+      <h2>No se encontraron recetas con esos ingredientes.</h2>
+      <p>¡Intenta agregando o cambiando ingredientes!</p>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2025 NutriEnLínea Todos los derechos reservados.</p>
+   <p>Desarrollado por <a href="https://cfg40.github.io/Cfgweb/" target="_blank">Cristhian Fuentes</a></p> 
+  </footer>
+  
+  <script type="module" src="main.js"></script>
+</body>
+</html>

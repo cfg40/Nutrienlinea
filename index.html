@@ -6,6 +6,53 @@
   <link rel="icon" href="img/logo-ico.ico" type="image/x-icon">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+  <style>
+    /* Floating button styles */
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ee0000;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      z-index: 1000;
+      animation: pulse 2s infinite;
+      text-align: center;
+    }
+
+    .floating-button img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .floating-button span {
+      font-size: 10px;
+      margin-top: 5px;
+    }
+
+    .floating-button:hover {
+      background-color: #20b857;
+    }
+
+    /* Animation for attention */
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+  </style>
 </head>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BEKFE2ELZR"></script>
@@ -132,6 +179,12 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating button -->
+  <a href="RECETAS/index.html" class="floating-button" aria-label="Ir a la página de recetas">
+    <img src="img/PLAN NUTRICIONAL.png" alt="Recetas">
+    <span>RECETAS</span>
+  </a>
 
   <!-- CREDITO FLOTANTE LO IMPLEMENTARÉ MÁS ADELANTE -->
   <!-- <div class="credits">

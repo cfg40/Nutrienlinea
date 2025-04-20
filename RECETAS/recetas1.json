@@ -1,0 +1,48 @@
+[
+  {
+    "titulo": "Tortilla Española",
+    "ingredientes": ["huevo", "patata", "cebolla", "aceite de oliva", "sal"],
+    "preparacion": "Pelar y cortar las patatas y cebolla. Freír en aceite, mezclar con los huevos y cuajar en sartén.",
+    "region": "España",
+    "tipo_proteina": "Huevo",
+    "tiempo": "35 min",
+    "imagen": ""
+  },
+  {
+    "titulo": "Pan francés clásico",
+    "ingredientes": ["pan", "huevo", "leche", "azúcar", "canela"],
+    "preparacion": "Empapa el pan en mezcla de huevo, leche y azúcar, fríe en sartén y espolvorea canela.",
+    "region": "Francia",
+    "tipo_proteina": "Huevo",
+    "tiempo": "20 min",
+    "imagen": ""
+  },
+  {
+    "titulo": "Shakshuka",
+    "ingredientes": ["huevo", "tomate", "cebolla", "pimiento", "comino", "aceite de oliva"],
+    "preparacion": "Sofríe la cebolla y pimiento, añade tomate y especias, cocina lentamente y agrega huevos encima para que se cocinen.",
+    "region": "Medio Oriente",
+    "tipo_proteina": "Huevo",
+    "tiempo": "30 min",
+    "imagen": ""
+  },
+  {
+    "titulo": "Ensalada caprese",
+    "ingredientes": ["tomate", "queso mozzarella", "albahaca", "aceite de oliva", "sal"],
+    "preparacion": "Corta el tomate y la mozzarella, alterna en un plato, añade albahaca y rocía con aceite y sal.",
+    "region": "Italia",
+    "tipo_proteina": "Lácteo",
+    "tiempo": "10 min",
+    "imagen": ""
+  },
+  {
+    "titulo": "Sándwich de atún",
+    "ingredientes": ["pan", "atún", "mayonesa", "lechuga", "tomate"],
+    "preparacion": "Mezcla atún con mayonesa, coloca sobre pan junto con lechuga y tomate.",
+    "region": "Internacional",
+    "tipo_proteina": "Pescado",
+    "tiempo": "15 min",
+    "imagen": ""
+  }
+]
+

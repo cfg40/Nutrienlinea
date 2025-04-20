@@ -1,0 +1,222 @@
+[
+  {
+    "titulo":"Ají de gallina",
+    "ingredientes":"Pechuga de pollo, pan, leche evaporada, ají amarillo, cebolla, ajo, nueces, queso parmesano",
+    "pasos":"1. Cocina y desmenuza el pollo. 2. Remoja pan en leche. 3. Sofríe cebolla, ajo y ají. 4. Agrega el pan remojado. 5. Incorpora pollo, queso y nueces. 6. Cocina a fuego lento y sirve con arroz y papa sancochada.",
+    "imagen":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcl-hL3suZvPBRMUkp3YyfPslSVVeWkalAgg&s",
+    "categoria_region":"Costa",
+    "tipo_proteina":"Pollo",
+    "tiempo_preparacion":"45 minutos",
+    "porciones":"4",
+    "dificultad":"Intermedio"
+  },
+  {
+    "titulo":"Tacacho con cecina",
+    "ingredientes":"Plátano verde, manteca, cecina, sal",
+    "pasos":"1. Asa los plátanos hasta que estén suaves. 2. Machácalos con manteca y sal. 3. Fríe la cecina. 4. Forma bolas de tacacho y sirve con la cecina caliente.",
+    "imagen":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLBfrIk1XNQV_-nQ2CXFeOJUcrc57QbL_2_Q&s",
+    "categoria_region":"Selva",
+    "tipo_proteina":"Cerdo",
+    "tiempo_preparacion":"30 minutos",
+    "porciones":"2",
+    "dificultad":"Fácil"
+  },
+  {
+    "titulo":"Arroz chaufa de pollo",
+    "ingredientes":"Arroz cocido, pollo, huevo, cebolla china, sillao, aceite, ajo, kion",
+    "pasos":"1. Fríe el pollo con ajo y kion. 2. Agrega huevo batido y revuelve. 3. Incorpora el arroz y sillao. 4. Añade cebolla china y mezcla todo bien.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/arroz_chaufa.jpg",
+    "categoria_region":"Costa",
+    "tipo_proteina":"Pollo",
+    "tiempo_preparacion":"25 minutos",
+    "porciones":"3",
+    "dificultad":"Fácil"
+  },
+  {
+    "titulo":"Ají de gallina #4",
+    "ingredientes":"Pechuga de pollo, pan, leche evaporada, ají amarillo, cebolla, ajo, nueces, queso parmesano",
+    "pasos":"1. Cocina y desmenuza el pollo. 2. Remoja pan en leche. 3. Sofríe cebolla, ajo y ají. 4. Agrega el pan remojado. 5. Incorpora pollo, queso y nueces. 6. Cocina a fuego lento y sirve con arroz y papa sancochada.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/aji_de_gallina.jpg",
+    "categoria_region":"Costa",
+    "tipo_proteina":"Pollo",
+    "tiempo_preparacion":"45 minutos",
+    "porciones":"4",
+    "dificultad":"Intermedio"
+  },
+  {
+    "titulo":"Tacacho con cecina #5",
+    "ingredientes":"Plátano verde, manteca, cecina, sal",
+    "pasos":"1. Asa los plátanos hasta que estén suaves. 2. Machácalos con manteca y sal. 3. Fríe la cecina. 4. Forma bolas de tacacho y sirve con la cecina caliente.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/tacacho_con_cecina.jpg",
+    "categoria_region":"Selva",
+    "tipo_proteina":"Cerdo",
+    "tiempo_preparacion":"30 minutos",
+    "porciones":"2",
+    "dificultad":"Fácil"
+  },
+  {
+    "titulo":"Arroz chaufa de pollo #6",
+    "ingredientes":"Arroz cocido, pollo, huevo, cebolla china, sillao, aceite, ajo, kion",
+    "pasos":"1. Fríe el pollo con ajo y kion. 2. Agrega huevo batido y revuelve. 3. Incorpora el arroz y sillao. 4. Añade cebolla china y mezcla todo bien.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/arroz_chaufa.jpg",
+    "categoria_region":"Costa",
+    "tipo_proteina":"Pollo",
+    "tiempo_preparacion":"25 minutos",
+    "porciones":"3",
+    "dificultad":"Fácil"
+  },
+  {
+    "titulo":"Ají de gallina #7",
+    "ingredientes":"Pechuga de pollo, pan, leche evaporada, ají amarillo, cebolla, ajo, nueces, queso parmesano",
+    "pasos":"1. Cocina y desmenuza el pollo. 2. Remoja pan en leche. 3. Sofríe cebolla, ajo y ají. 4. Agrega el pan remojado. 5. Incorpora pollo, queso y nueces. 6. Cocina a fuego lento y sirve con arroz y papa sancochada.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/aji_de_gallina.jpg",
+    "categoria_region":"Costa",
+    "tipo_proteina":"Pollo",
+    "tiempo_preparacion":"45 minutos",
+    "porciones":"4",
+    "dificultad":"Intermedio"
+  },
+  {
+    "titulo":"Tacacho con cecina #8",
+    "ingredientes":"Plátano verde, manteca, cecina, sal",
+    "pasos":"1. Asa los plátanos hasta que estén suaves. 2. Machácalos con manteca y sal. 3. Fríe la cecina. 4. Forma bolas de tacacho y sirve con la cecina caliente.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/tacacho_con_cecina.jpg",
+    "categoria_region":"Selva",
+    "tipo_proteina":"Cerdo",
+    "tiempo_preparacion":"30 minutos",
+    "porciones":"2",
+    "dificultad":"Fácil"
+  },
+  {
+    "titulo":"Arroz chaufa de pollo #9",
+    "ingredientes":"Arroz cocido, pollo, huevo, cebolla china, sillao, aceite, ajo, kion",
+    "pasos":"1. Fríe el pollo con ajo y kion. 2. Agrega huevo batido y revuelve. 3. Incorpora el arroz y sillao. 4. Añade cebolla china y mezcla todo bien.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/arroz_chaufa.jpg",
+    "categoria_region":"Costa",
+    "tipo_proteina":"Pollo",
+    "tiempo_preparacion":"25 minutos",
+    "porciones":"3",
+    "dificultad":"Fácil"
+  },
+  {
+    "titulo":"Ají de gallina #10",
+    "ingredientes":"Pechuga de pollo, pan, leche evaporada, ají amarillo, cebolla, ajo, nueces, queso parmesano",
+    "pasos":"1. Cocina y desmenuza el pollo. 2. Remoja pan en leche. 3. Sofríe cebolla, ajo y ají. 4. Agrega el pan remojado. 5. Incorpora pollo, queso y nueces. 6. Cocina a fuego lento y sirve con arroz y papa sancochada.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/aji_de_gallina.jpg",
+    "categoria_region":"Costa",
+    "tipo_proteina":"Pollo",
+    "tiempo_preparacion":"45 minutos",
+    "porciones":"4",
+    "dificultad":"Intermedio"
+  },
+  {
+    "titulo":"Tacacho con cecina #11",
+    "ingredientes":"Plátano verde, manteca, cecina, sal",
+    "pasos":"1. Asa los plátanos hasta que estén suaves. 2. Machácalos con manteca y sal. 3. Fríe la cecina. 4. Forma bolas de tacacho y sirve con la cecina caliente.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/tacacho_con_cecina.jpg",
+    "categoria_region":"Selva",
+    "tipo_proteina":"Cerdo",
+    "tiempo_preparacion":"30 minutos",
+    "porciones":"2",
+    "dificultad":"Fácil"
+  },
+  {
+    "titulo":"Arroz chaufa de pollo #12",
+    "ingredientes":"Arroz cocido, pollo, huevo, cebolla china, sillao, aceite, ajo, kion",
+    "pasos":"1. Fríe el pollo con ajo y kion. 2. Agrega huevo batido y revuelve. 3. Incorpora el arroz y sillao. 4. Añade cebolla china y mezcla todo bien.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/arroz_chaufa.jpg",
+    "categoria_region":"Costa",
+    "tipo_proteina":"Pollo",
+    "tiempo_preparacion":"25 minutos",
+    "porciones":"3",
+    "dificultad":"Fácil"
+  },
+  {
+    "titulo":"Ají de gallina #13",
+    "ingredientes":"Pechuga de pollo, pan, leche evaporada, ají amarillo, cebolla, ajo, nueces, queso parmesano",
+    "pasos":"1. Cocina y desmenuza el pollo. 2. Remoja pan en leche. 3. Sofríe cebolla, ajo y ají. 4. Agrega el pan remojado. 5. Incorpora pollo, queso y nueces. 6. Cocina a fuego lento y sirve con arroz y papa sancochada.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/aji_de_gallina.jpg",
+    "categoria_region":"Costa",
+    "tipo_proteina":"Pollo",
+    "tiempo_preparacion":"45 minutos",
+    "porciones":"4",
+    "dificultad":"Intermedio"
+  },
+  {
+    "titulo":"Tacacho con cecina #14",
+    "ingredientes":"Plátano verde, manteca, cecina, sal",
+    "pasos":"1. Asa los plátanos hasta que estén suaves. 2. Machácalos con manteca y sal. 3. Fríe la cecina. 4. Forma bolas de tacacho y sirve con la cecina caliente.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/tacacho_con_cecina.jpg",
+    "categoria_region":"Selva",
+    "tipo_proteina":"Cerdo",
+    "tiempo_preparacion":"30 minutos",
+    "porciones":"2",
+    "dificultad":"Fácil"
+  },
+  {
+    "titulo":"Arroz chaufa de pollo #15",
+    "ingredientes":"Arroz cocido, pollo, huevo, cebolla china, sillao, aceite, ajo, kion",
+    "pasos":"1. Fríe el pollo con ajo y kion. 2. Agrega huevo batido y revuelve. 3. Incorpora el arroz y sillao. 4. Añade cebolla china y mezcla todo bien.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/arroz_chaufa.jpg",
+    "categoria_region":"Costa",
+    "tipo_proteina":"Pollo",
+    "tiempo_preparacion":"25 minutos",
+    "porciones":"3",
+    "dificultad":"Fácil"
+  },
+  {
+    "titulo":"Ají de gallina #16",
+    "ingredientes":"Pechuga de pollo, pan, leche evaporada, ají amarillo, cebolla, ajo, nueces, queso parmesano",
+    "pasos":"1. Cocina y desmenuza el pollo. 2. Remoja pan en leche. 3. Sofríe cebolla, ajo y ají. 4. Agrega el pan remojado. 5. Incorpora pollo, queso y nueces. 6. Cocina a fuego lento y sirve con arroz y papa sancochada.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/aji_de_gallina.jpg",
+    "categoria_region":"Costa",
+    "tipo_proteina":"Pollo",
+    "tiempo_preparacion":"45 minutos",
+    "porciones":"4",
+    "dificultad":"Intermedio"
+  },
+  {
+    "titulo":"Tacacho con cecina #17",
+    "ingredientes":"Plátano verde, manteca, cecina, sal",
+    "pasos":"1. Asa los plátanos hasta que estén suaves. 2. Machácalos con manteca y sal. 3. Fríe la cecina. 4. Forma bolas de tacacho y sirve con la cecina caliente.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/tacacho_con_cecina.jpg",
+    "categoria_region":"Selva",
+    "tipo_proteina":"Cerdo",
+    "tiempo_preparacion":"30 minutos",
+    "porciones":"2",
+    "dificultad":"Fácil"
+  },
+  {
+    "titulo":"Arroz chaufa de pollo #18",
+    "ingredientes":"Arroz cocido, pollo, huevo, cebolla china, sillao, aceite, ajo, kion",
+    "pasos":"1. Fríe el pollo con ajo y kion. 2. Agrega huevo batido y revuelve. 3. Incorpora el arroz y sillao. 4. Añade cebolla china y mezcla todo bien.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/arroz_chaufa.jpg",
+    "categoria_region":"Costa",
+    "tipo_proteina":"Pollo",
+    "tiempo_preparacion":"25 minutos",
+    "porciones":"3",
+    "dificultad":"Fácil"
+  },
+  {
+    "titulo":"Ají de gallina #19",
+    "ingredientes":"Pechuga de pollo, pan, leche evaporada, ají amarillo, cebolla, ajo, nueces, queso parmesano",
+    "pasos":"1. Cocina y desmenuza el pollo. 2. Remoja pan en leche. 3. Sofríe cebolla, ajo y ají. 4. Agrega el pan remojado. 5. Incorpora pollo, queso y nueces. 6. Cocina a fuego lento y sirve con arroz y papa sancochada.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/aji_de_gallina.jpg",
+    "categoria_region":"Costa",
+    "tipo_proteina":"Pollo",
+    "tiempo_preparacion":"45 minutos",
+    "porciones":"4",
+    "dificultad":"Intermedio"
+  },
+  {
+    "titulo":"Tacacho con cecina #20",
+    "ingredientes":"Plátano verde, manteca, cecina, sal",
+    "pasos":"1. Asa los plátanos hasta que estén suaves. 2. Machácalos con manteca y sal. 3. Fríe la cecina. 4. Forma bolas de tacacho y sirve con la cecina caliente.",
+    "imagen":"https:\/\/www.ejemplo.com\/imagenes\/tacacho_con_cecina.jpg",
+    "categoria_region":"Selva",
+    "tipo_proteina":"Cerdo",
+    "tiempo_preparacion":"30 minutos",
+    "porciones":"2",
+    "dificultad":"Fácil"
+  }
+]
