@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrición & Bienestar - Tu camino hacia una vida saludable</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#4ade80',secondary:'#38bdf8'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#fb923c', // Naranja suave
+                        secondary: '#38bdf8'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+
+
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        .custom-checkbox {
+            position: relative;
+            cursor: pointer;
+        }
+        .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border: 2px solid #e2e8f0;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        .custom-checkbox:hover input ~ .checkmark {
+            border-color: #4ade80;
+        }
+        .custom-checkbox input:checked ~ .checkmark {
+            background-color: #4ade80;
+            border-color: #4ade80;
+        }
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        .custom-checkbox input:checked ~ .checkmark:after {
+            display: block;
+        }
+        .custom-checkbox .checkmark:after {
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .custom-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        .custom-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e2e8f0;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #4ade80;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .range-slider {
+            width: 100%;
+            position: relative;
+        }
+        .range-slider input[type="range"] {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #e2e8f0;
+            outline: none;
+        }
+        .range-slider input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #4ade80;
+            cursor: pointer;
+        }
+        .range-slider input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #4ade80;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+           <a href="#" class="flex items-center text-3xl font-['Pacifico'] text-primary">
+    <img src="img/logo1.png" alt="Logo" class="h-12 w-14 mr-3"> <!-- Ajusta la ruta y tamaño según tu logo -->
+    Nutrienlinea
+</a>
+            
+            
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#inicio" class="text-gray-800 hover:text-primary font-medium transition-colors">Inicio</a>
+                <a href="#servicios" class="text-gray-800 hover:text-primary font-medium transition-colors">Servicios</a>
+                <a href="#talleres" class="text-gray-800 hover:text-primary font-medium transition-colors">Talleres</a>
+                <a href="#calculadora" class="text-gray-800 hover:text-primary font-medium transition-colors">Calculadora IMC</a>
+                <a href="#test" class="text-gray-800 hover:text-primary font-medium transition-colors">Test Alimentario</a>
+                <a href="#contacto" class="text-gray-800 hover:text-primary font-medium transition-colors">Contacto</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+              <a href="https://wa.link/6ii1yd" target="_blank" rel="noopener" class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+    Agendar Consulta
+</a>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" id="mobile-menu-button">
+                    <i class="ri-menu-line ri-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#inicio" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Inicio</a>
+                <a href="#servicios" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Servicios</a>
+                <a href="#talleres" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Talleres</a>
+                <a href="#calculadora" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Calculadora IMC</a>
+                <a href="#test" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Test Alimentario</a>
+                <a href="#contacto" class="text-gray-800 hover:text-primary font-medium py-2 transition-colors">Contacto</a>
+              <a href="https://wa.link/6ii1yd" target="_blank" rel="noopener" class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+    Agendar Consulta
+</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+<section id="inicio" class="relative w-full bg-white py-8 md:py-16">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row-reverse items-center justify-center gap-12 min-h-[350px] md:min-h-[420px]">
+        <!-- Imagen a la derecha, ocupa todo el alto del contenedor -->
+<div class="w-full md:w-1/2 flex justify-center items-stretch relative overflow-hidden">
+    <img src="img/cynthia4.png" alt="Nutricionista" class="w-full h-full object-cover object-center">
+    <!-- Gradiente de transparencia de izquierda a derecha -->
+    <div class="absolute inset-0 pointer-events-none"
+         style="background: linear-gradient(to right, white 0%, transparent 50%, transparent 100%);"></div>
+</div>
+        <!-- Texto a la izquierda -->
+        <div class="w-full md:w-1/2 space-y-6 text-center md:text-left flex flex-col justify-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">Planes nutricionales personalizados en Perú</h1>
+            <p class="text-lg text-gray-700">Descubre cómo una alimentación equilibrada puede mejorar tu calidad de vida. Planes nutricionales adaptados a tus necesidades y objetivos personales.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+              <a href="https://wa.link/8822lt" target="_blank" rel="noopener" class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+    Consulta Gratuita
+</a>
+                    <a href="#Beneficios" class="bg-white text-primary border border-primary px-8 py-3 !rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+                        Sobre Mí
+                    </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Beneficios -->
+        <section id="Beneficios" class="py-16 bg-gray-50 scroll-mt-24">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Soy Cynthia Fuentes - Nutricionista</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">Nutricionista egresada de la Universidad Nacional Mayor de San Marcos con más de 14 años de experiencia en el campo de la nutrición. Mi enfoque profesional se basa en crear planes personalizados que se adapten a las necesidades específicas de cada persona, considerando sus objetivos, preferencias y estilo de vida.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="ri-user-heart-line ri-xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Planes Personalizados</h3>
+                        <p class="text-gray-600">Cada plan nutricional se adapta a tus necesidades específicas, considerando tus objetivos y preferencias.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="ri-medal-line ri-xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Basado en Evidencia</h3>
+                        <p class="text-gray-600">Todas mis recomendaciones están fundamentadas en la ciencia y la investigación nutricional más reciente.</p>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="ri-24-hours-line ri-xl text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-3">Seguimiento Continuo</h3>
+                        <p class="text-gray-600">Te acompañamos durante todo el proceso con seguimiento regular para asegurar que alcances tus objetivos de salud.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios -->
+        <section id="servicios" class="py-16 scroll-mt-24">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Nuestros Servicios</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">Ofrecemos una variedad de servicios diseñados para ayudarte a alcanzar tus objetivos de salud y bienestar a través de la nutrición.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                        <div class="h-48 overflow-hidden">
+                            <img src="img/consulta-nutricional.jpg" alt="Consulta Nutricional" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Consulta Nutricional</h3>
+                            <p class="text-gray-600 mb-4">Diseño un plan nutricional completamente adaptado a tus necesidades, objetivos y preferencias alimentarias. Cada persona es única y tu plan nutricional también lo será.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-semibold">Desde S/. 80 soles</span>
+                                <button class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                                    Reservar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=A%20nutritionist%20conducting%20a%20workshop%20in%20a%20bright%2C%20modern%20kitchen.%20Several%20participants%20are%20gathered%20around%20a%20large%20counter%20with%20fresh%20ingredients.%20The%20nutritionist%20is%20demonstrating%20how%20to%20prepare%20a%20healthy%20meal%2C%20with%20nutritional%20information%20displayed%20on%20a%20screen%20nearby.%20The%20atmosphere%20is%20engaging%20and%20educational.&width=600&height=400&seq=service3&orientation=landscape" alt="Talleres Grupales" class="w-full h-full object-cover object-top" alt="Nutrición Deportiva" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Talleres presenciales</h3>
+                            <p class="text-gray-600 mb-4">Participa en sesiones grupales donde aprenderás sobre diversos temas de nutrición en un ambiente interactivo. Ideal para empresas, instituciones educativas o grupos con intereses comunes.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-semibold">Desde S/. 250 soles</span>
+                                <button class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                                    Reservar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                        <div class="h-48 overflow-hidden">
+                            <img src="img/taller-virtual.jpg">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Talleres Virtuales</h3>
+                            <p class="text-gray-600 mb-4">La misma calidad y contenido de los talleres presenciales, pero en formato digital para que puedas acceder desde cualquier lugar. Aprende a tu propio ritmo y sin limitaciones geográficas.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-semibold">Desde S/.30 soles</span>
+                                <button class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                                    Reservar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Lo que dicen nuestros clientes</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">Historias reales de personas que han transformado su salud y bienestar con nuestros servicios.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="text-primary">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">"Desde que empecé mi plan nutricional me siento con más energía durante el día. Además, he notado una mejor digestión y menos malestar estomacal. Me gusta mucho la variedad de alimentos que incluye el plan, ¡nunca me aburro!"</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden mr-4">
+                                <img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20smiling%20Hispanic%20woman%20in%20her%2030s%20with%20shoulder-length%20brown%20hair%2C%20against%20a%20neutral%20background.%20She%20has%20a%20friendly%20expression%20and%20is%20wearing%20casual%20professional%20attire.&width=100&height=100&seq=test1&orientation=squarish" alt="Carolina Mendoza" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Carolina Mendoza</h4>
+                                <p class="text-sm text-gray-500">Cliente desde 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="text-primary">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">"Gracias al acompañamiento nutricional, aprendí a organizar mis horarios de comida y a comer de forma más consciente. Me siento mejor tanto física como mentalmente, y eso ha mejorado incluso mi estado de ánimo."</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden mr-4">
+                                <img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20fit%20Hispanic%20man%20in%20his%20late%2020s%20with%20short%20black%20hair%20and%20a%20light%20beard%2C%20against%20a%20neutral%20background.%20He%20has%20an%20athletic%20build%20and%20is%20wearing%20a%20casual%20athletic%20shirt.&width=100&height=100&seq=test2&orientation=squarish" alt="Alejandro Vargas" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Alejandro Vargas</h4>
+                                <p class="text-sm text-gray-500">Cliente desde 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded shadow-sm hover:shadow-md transition-shadow">
+                        <div class="flex items-center mb-4">
+                            <div class="text-primary">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6">"He aprendido muchas cosas que no sabía sobre la alimentación. Hoy me siento más informado y seguro al momento de elegir mis comidas. Sin duda, este proceso me ha cambiado la vida positivamente."</p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-gray-300 overflow-hidden mr-4">
+                                <img src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20smiling%20woman%20in%20her%2040s%20with%20curly%20hair%2C%20against%20a%20neutral%20background.%20She%20has%20a%20warm%20expression%20and%20is%20wearing%20a%20casual%20blouse.&width=100&height=100&seq=test3&orientation=squarish" alt="Gabriela Moreno" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-900">Gabriela Moreno</h4>
+                                <p class="text-sm text-gray-500">Cliente desde 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Talleres Grabados -->
+        <section id="talleres" class="py-16 scroll-mt-24">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Talleres Grabados</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">Accede a nuestros talleres en cualquier momento y desde cualquier lugar. Aprende a tu propio ritmo.</p>
+                </div>
+                
+                <!-- <div class="flex flex-wrap justify-center gap-4 mb-8">
+                    <button class="bg-primary text-white px-4 py-2 !rounded-full font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                        Todos
+                    </button>
+                    <button class="bg-white text-gray-700 border border-gray-200 px-4 py-2 !rounded-full font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+                        Nutrición Básica
+                    </button>
+                    <button class="bg-white text-gray-700 border border-gray-200 px-4 py-2 !rounded-full font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+                        Cocina Saludable
+                    </button>
+                    <button class="bg-white text-gray-700 border border-gray-200 px-4 py-2 !rounded-full font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+                        Nutrición Deportiva
+                    </button>
+                </div> -->
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="img/1.png" alt="Fundamentos de Nutrición Saludable" class="w-full h-full object-cover object-top">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                                <div class="w-14 h-14 bg-white bg-opacity-80 rounded-full flex items-center justify-center">
+                                    <i class="ri-play-fill ri-2x text-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm text-gray-500">Cocina Saludable</span>
+                                <span class="text-sm text-gray-500">2.00 horas</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Lonchera Saludable</h3>
+                            <p class="text-gray-600 mb-4">Aprende a preparar loncheras saludables, rápidas y deliciosas para tus hijos, además te damos ideas para tres semanas.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-semibold">S/.29.00</span>
+                                <button class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="img/2.png" alt="Cocina Rápida y Saludable" class="w-full h-full object-cover object-top">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                                <div class="w-14 h-14 bg-white bg-opacity-80 rounded-full flex items-center justify-center">
+                                    <i class="ri-play-fill ri-2x text-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm text-gray-500">Nutrición básica</span>
+                                <span class="text-sm text-gray-500">2.30 horas</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Nutrición y pérdida de peso</h3>
+                            <p class="text-gray-600 mb-4">Pierde peso de forma saludable y sostenible con la guía de una nutricionista y sin dietas restrictivas.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-semibold">S/.29.00</span>
+                                <button class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="img/3.png" alt="Nutrición para Deportistas" class="w-full h-full object-cover object-top">
+                            <div class="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
+                                <div class="w-14 h-14 bg-white bg-opacity-80 rounded-full flex items-center justify-center">
+                                    <i class="ri-play-fill ri-2x text-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm text-gray-500">Nutrición básica</span>
+                                <span class="text-sm text-gray-500">75 min</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Cómo controlar la diábetes</h3>
+                            <p class="text-gray-600 mb-4">Aprende a controlar la diabetes con una alimentación equilibrada y hábitos saludables para mejorar tu bienestar.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-primary font-semibold">Próximamente </span>
+                                <button class="bg-primary text-white px-4 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- <div class="text-center mt-10">
+                    <button class="bg-white text-primary border border-primary px-6 py-3 !rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+                        Ver Todos los Talleres
+                    </button>
+                </div> -->
+            </div>
+        </section>
+        <!-- Calculadora IMC -->
+        <section id="calculadora" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto bg-white rounded shadow-sm p-8">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Calculadora de IMC</h2>
+                        <p class="text-gray-600">Calcula tu Índice de Masa Corporal para tener una referencia sobre tu estado nutricional.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <form id="imc-form" class="space-y-6">
+                                <div>
+                                    <label for="weight" class="block text-sm font-medium text-gray-700 mb-1">Peso (kg)</label>
+                                    <input type="number" id="weight" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Ej: 70">
+                                </div>
+                                
+                                <div>
+                                    <label for="height" class="block text-sm font-medium text-gray-700 mb-1">Altura (cm)</label>
+                                    <input type="number" id="height" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Ej: 170">
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                                    Calcular IMC
+                                </button>
+                            </form>
+                        </div>
+                        
+                        <div id="imc-result" class="hidden flex flex-col items-center justify-center">
+                            <div class="text-center mb-6">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Tu IMC es:</h3>
+                                <div class="text-4xl font-bold text-primary mb-2" id="imc-value">0.0</div>
+                                <p class="text-lg text-gray-700" id="imc-category">Categoría</p>
+                            </div>
+                            
+                            <div class="w-full bg-gray-200 h-8 rounded-full overflow-hidden mb-6">
+                                <div id="imc-indicator" class="h-full bg-primary" style="width: 0%"></div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <p class="text-gray-600 mb-4" id="imc-recommendation">Para obtener recomendaciones personalizadas, agenda una consulta con nuestros especialistas.</p>
+                                <a href="https://wa.link/6ii1yd" target="_blank" rel="noopener" class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                                 Agendar Consulta
+</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Test Alimentario -->
+        <section id="test" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto bg-white rounded shadow-sm p-8">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Test Alimentario</h2>
+                        <p class="text-gray-600">Responde estas preguntas para evaluar tus hábitos alimenticios actuales y recibir recomendaciones básicas.</p>
+                    </div>
+                    
+                    <div id="test-container">
+                        <div id="test-progress" class="w-full bg-gray-200 h-2 rounded-full mb-8">
+                            <div id="progress-bar" class="h-full bg-primary rounded-full" style="width: 20%"></div>
+                        </div>
+                        
+                        <div id="test-questions">
+                            <div class="test-question active" data-question="1">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4">1. ¿Cuántas porciones de frutas y verduras consumes al día?</h3>
+                                <div class="space-y-3">
+                                    <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded hover:border-primary cursor-pointer">
+                                        <input type="radio" name="q1" value="1" class="hidden">
+                                        <div class="w-5 h-5 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                            <div class="q1-radio-selected hidden w-3 h-3 bg-primary rounded-full"></div>
+                                        </div>
+                                        <span>Menos de 2 porciones</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded hover:border-primary cursor-pointer">
+                                        <input type="radio" name="q1" value="2" class="hidden">
+                                        <div class="w-5 h-5 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                            <div class="q1-radio-selected hidden w-3 h-3 bg-primary rounded-full"></div>
+                                        </div>
+                                        <span>Entre 2 y 4 porciones</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded hover:border-primary cursor-pointer">
+                                        <input type="radio" name="q1" value="3" class="hidden">
+                                        <div class="w-5 h-5 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                            <div class="q1-radio-selected hidden w-3 h-3 bg-primary rounded-full"></div>
+                                        </div>
+                                        <span>5 o más porciones</span>
+                                    </label>
+                                </div>
+                                <div class="mt-8 flex justify-end">
+                                    <button class="next-question bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                                        Siguiente
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="test-question hidden" data-question="2">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4">2. ¿Con qué frecuencia consumes comida procesada o fast food?</h3>
+                                <div class="space-y-3">
+                                    <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded hover:border-primary cursor-pointer">
+                                        <input type="radio" name="q2" value="1" class="hidden">
+                                        <div class="w-5 h-5 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                            <div class="q2-radio-selected hidden w-3 h-3 bg-primary rounded-full"></div>
+                                        </div>
+                                        <span>Diariamente</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded hover:border-primary cursor-pointer">
+                                        <input type="radio" name="q2" value="2" class="hidden">
+                                        <div class="w-5 h-5 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                            <div class="q2-radio-selected hidden w-3 h-3 bg-primary rounded-full"></div>
+                                        </div>
+                                        <span>2-3 veces por semana</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded hover:border-primary cursor-pointer">
+                                        <input type="radio" name="q2" value="3" class="hidden">
+                                        <div class="w-5 h-5 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                            <div class="q2-radio-selected hidden w-3 h-3 bg-primary rounded-full"></div>
+                                        </div>
+                                        <span>Ocasionalmente o nunca</span>
+                                    </label>
+                                </div>
+                                <div class="mt-8 flex justify-between">
+                                    <button class="prev-question bg-white text-gray-700 border border-gray-300 px-6 py-2 !rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+                                        Anterior
+                                    </button>
+                                    <button class="next-question bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                                        Siguiente
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="test-question hidden" data-question="3">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4">3. ¿Cuántos vasos de agua bebes al día?</h3>
+                                <div class="space-y-3">
+                                    <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded hover:border-primary cursor-pointer">
+                                        <input type="radio" name="q3" value="1" class="hidden">
+                                        <div class="w-5 h-5 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                            <div class="q3-radio-selected hidden w-3 h-3 bg-primary rounded-full"></div>
+                                        </div>
+                                        <span>Menos de 4 vasos</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded hover:border-primary cursor-pointer">
+                                        <input type="radio" name="q3" value="2" class="hidden">
+                                        <div class="w-5 h-5 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                            <div class="q3-radio-selected hidden w-3 h-3 bg-primary rounded-full"></div>
+                                        </div>
+                                        <span>Entre 4 y 6 vasos</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded hover:border-primary cursor-pointer">
+                                        <input type="radio" name="q3" value="3" class="hidden">
+                                        <div class="w-5 h-5 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                            <div class="q3-radio-selected hidden w-3 h-3 bg-primary rounded-full"></div>
+                                        </div>
+                                        <span>8 o más vasos</span>
+                                    </label>
+                                </div>
+                                <div class="mt-8 flex justify-between">
+                                    <button class="prev-question bg-white text-gray-700 border border-gray-300 px-6 py-2 !rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+                                        Anterior
+                                    </button>
+                                    <button class="next-question bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                                        Siguiente
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="test-question hidden" data-question="4">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4">4. ¿Realizas actividad física regularmente?</h3>
+                                <div class="space-y-3">
+                                    <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded hover:border-primary cursor-pointer">
+                                        <input type="radio" name="q4" value="1" class="hidden">
+                                        <div class="w-5 h-5 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                            <div class="q4-radio-selected hidden w-3 h-3 bg-primary rounded-full"></div>
+                                        </div>
+                                        <span>No, soy sedentario</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded hover:border-primary cursor-pointer">
+                                        <input type="radio" name="q4" value="2" class="hidden">
+                                        <div class="w-5 h-5 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                            <div class="q4-radio-selected hidden w-3 h-3 bg-primary rounded-full"></div>
+                                        </div>
+                                        <span>1-2 veces por semana</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded hover:border-primary cursor-pointer">
+                                        <input type="radio" name="q4" value="3" class="hidden">
+                                        <div class="w-5 h-5 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                            <div class="q4-radio-selected hidden w-3 h-3 bg-primary rounded-full"></div>
+                                        </div>
+                                        <span>3 o más veces por semana</span>
+                                    </label>
+                                </div>
+                                <div class="mt-8 flex justify-between">
+                                    <button class="prev-question bg-white text-gray-700 border border-gray-300 px-6 py-2 !rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+                                        Anterior
+                                    </button>
+                                    <button class="next-question bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                                        Siguiente
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="test-question hidden" data-question="5">
+                                <h3 class="text-xl font-semibold text-gray-900 mb-4">5. ¿Cuántas comidas realizas al día?</h3>
+                                <div class="space-y-3">
+                                    <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded hover:border-primary cursor-pointer">
+                                        <input type="radio" name="q5" value="1" class="hidden">
+                                        <div class="w-5 h-5 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                            <div class="q5-radio-selected hidden w-3 h-3 bg-primary rounded-full"></div>
+                                        </div>
+                                        <span>1-2 comidas</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded hover:border-primary cursor-pointer">
+                                        <input type="radio" name="q5" value="2" class="hidden">
+                                        <div class="w-5 h-5 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                            <div class="q5-radio-selected hidden w-3 h-3 bg-primary rounded-full"></div>
+                                        </div>
+                                        <span>3 comidas</span>
+                                    </label>
+                                    <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded hover:border-primary cursor-pointer">
+                                        <input type="radio" name="q5" value="3" class="hidden">
+                                        <div class="w-5 h-5 border-2 border-gray-300 rounded-full flex items-center justify-center">
+                                            <div class="q5-radio-selected hidden w-3 h-3 bg-primary rounded-full"></div>
+                                        </div>
+                                        <span>5 o más comidas (incluyendo snacks)</span>
+                                    </label>
+                                </div>
+                                <div class="mt-8 flex justify-between">
+                                    <button class="prev-question bg-white text-gray-700 border border-gray-300 px-6 py-2 !rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+                                        Anterior
+                                    </button>
+                                    <button id="submit-test" class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                                        Finalizar Test
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="test-result" class="hidden">
+                            <div class="text-center mb-8">
+                                <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="ri-check-line ri-2x text-primary"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Resultados de tu Test</h3>
+                                <p class="text-gray-600">Basado en tus respuestas, hemos preparado algunas recomendaciones para ti.</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-6 rounded mb-6">
+                                <h4 class="text-lg font-semibold text-gray-900 mb-3">Tu puntuación: <span id="test-score" class="text-primary">0/15</span></h4>
+                                <div id="test-recommendation" class="text-gray-700">
+                                    <p class="mb-2">Tus hábitos alimenticios actuales podrían mejorarse. Te recomendamos:</p>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        <li>Aumentar el consumo de frutas y verduras</li>
+                                        <li>Reducir alimentos procesados</li>
+                                        <li>Incrementar la ingesta de agua</li>
+                                        <li>Establecer un horario regular de comidas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <p class="text-gray-600 mb-4">Para obtener un plan nutricional personalizado y recomendaciones específicas, agenda una consulta con nuestros especialistas.</p>
+                                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                    <a href="https://wa.link/6ii1yd" target="_blank" rel="noopener" class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                                     Agendar Consulta
+</a>
+                                    <button id="restart-test" class="bg-white text-gray-700 border border-gray-300 px-6 py-2 !rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
+                                        Reiniciar Test
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="py-16 bg-gray-50 scroll-mt-24">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Contacto</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">¿Tienes alguna pregunta o quieres agendar una consulta? Estamos aquí para ayudarte.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <div>
+                       <form action="https://formspree.io/f/mpwrynzz" method="POST" class="space-y-6">
+    <div>
+        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre completo</label>
+        <input type="text" name="name" id="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Tu nombre">
+    </div>
+    <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo electrónico</label>
+        <input type="email" name="email" id="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="tu@email.com">
+    </div>
+    <div>
+        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
+        <input type="tel" name="phone" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="+56 9 1234 5678">
+    </div>
+    <div>
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+        <textarea name="message" id="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="¿En qué podemos ayudarte?"></textarea>
+    </div>
+    <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+        Enviar Mensaje
+    </button>
+</form>
+                    </div>
+                    
+                    <div class="flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Información de Contacto</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                        <i class="ri-map-pin-line text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900">Dirección</h4>
+                                        <p class="text-gray-600">Parcona, Ica - Perú</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                        <i class="ri-phone-line text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900">Teléfono</h4>
+                                        <p class="text-gray-600">+51 971 221917</p>
+                                        <p class="text-gray-600">+51 986 110678</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                        <i class="ri-mail-line text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900">Email</h4>
+                                        <p class="text-gray-600">nutrienlinea2020@gmail.com</p>
+                                        <p class="text-gray-600">www.minutri.es</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                        <i class="ri-time-line text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900">Horario de Atención</h4>
+                                        <p class="text-gray-600">Lunes a Viernes: 9:00 - 15:00</p>
+                                        <p class="text-gray-600">Sábado: 9:00 - 13:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-4">Síguenos</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://www.instagram.com/nutrienlinea28?igsh=MTJtcTk4eDF6azZpeQ==" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors">
+                                    <i class="ri-instagram-line text-primary"></i>
+                                </a>
+                                <a href="https://web.facebook.com/profile.php?id=100053269314139" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors">
+                                    <i class="ri-facebook-line text-primary"></i>
+                                </a>
+                                <a href="https://www.tiktok.com/@nutrienlinea2025?is_from_webapp=1&sender_device=pc" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors">
+                                    <i class="ri-tiktok-line text-primary"></i>
+                                </a>
+                                <a href="https://www.youtube.com/@Nutrienlinea" class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center hover:bg-primary/20 transition-colors">
+                                    <i class="ri-youtube-line text-primary"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 max-w-5xl mx-auto h-80 bg-gray-200 rounded overflow-hidden">
+                    <div class="w-full h-full" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-position: center; background-size: cover;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter
+        <section class="py-16 bg-primary/5">
+            <div class="container mx-auto px-4">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Suscríbete a nuestro boletín</h2>
+                    <p class="text-gray-600 mb-8">Recibe consejos de nutrición, recetas saludables y promociones exclusivas directamente en tu correo.</p>
+                    
+                    <form class="flex flex-col sm:flex-row gap-4">
+                        <input type="email" class="flex-grow px-4 py-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Tu correo electrónico">
+                        <button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
+                            Suscribirse
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section> -->
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <a href="#" class="text-3xl font-['Pacifico'] text-white mb-4 block">Nutrienlinea</a>
+                    <p class="text-gray-400 mb-4">Transformando vidas a través de la nutrición personalizada y hábitos saludables.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/nutrienlinea28?igsh=MTJtcTk4eDF6azZpeQ==" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="https://web.facebook.com/profile.php?id=100053269314139" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-facebook-line"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@nutrienlinea2025?is_from_webapp=1&sender_device=pc" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-tiktok-line"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@Nutrienlinea" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="ri-youtube-line"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-gray-400 hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="#servicios" class="text-gray-400 hover:text-white transition-colors">Servicios</a></li>
+                        <li><a href="#talleres" class="text-gray-400 hover:text-white transition-colors">Talleres</a></li>
+                        <li><a href="#calculadora" class="text-gray-400 hover:text-white transition-colors">Calculadora IMC</a></li>
+                        <li><a href="#test" class="text-gray-400 hover:text-white transition-colors">Test Alimentario</a></li>
+                        <li><a href="#contacto" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <!-- <div>
+                    <h3 class="text-lg font-semibold mb-4">Servicios</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Consulta Nutricional</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Nutrición Deportiva</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Talleres Grupales</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Nutrición Infantil</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Nutrición para Embarazadas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Nutrición Clínica</a></li>
+                    </ul>
+                </div> -->
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contacto</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="ri-map-pin-line mr-2 mt-1"></i>
+                            <span>Parcona, Ica - Perú</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-phone-line mr-2 mt-1"></i>
+                            <span>+51 971 221917</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-mail-line mr-2 mt-1"></i>
+                            <span>nutrienlinea2020@gmail.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="ri-time-line mr-2 mt-1"></i>
+                            <span>Lun-Vie: 9:00 - 15:00<br>Sáb: 9:00 - 13:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Nutrienlinea. Todos los derechos reservados.</p>
+                <div class="flex space-x-4">
+                    <!-- <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Política de Privacidad</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Términos y Condiciones</a> -->
+                    <a href="https://cfg40.github.io/Cfgweb/" class="text-gray-400 hover:text-white text-sm transition-colors">Web Diseñada por Cristhian Fuentes</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.link/6ii1yd" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors">
+            <i class="ri-whatsapp-line ri-xl text-white"></i>
+        </a>
+    </div>
+
+    <script id="mobile-menu-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+
+    <script id="imc-calculator-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const imcForm = document.getElementById('imc-form');
+            const imcResult = document.getElementById('imc-result');
+            const imcValue = document.getElementById('imc-value');
+            const imcCategory = document.getElementById('imc-category');
+            const imcIndicator = document.getElementById('imc-indicator');
+            const imcRecommendation = document.getElementById('imc-recommendation');
+            
+            imcForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const weight = parseFloat(document.getElementById('weight').value);
+                const height = parseFloat(document.getElementById('height').value) / 100; // convert to meters
+                
+                if (weight > 0 && height > 0) {
+                    const imc = weight / (height * height);
+                    const imcRounded = Math.round(imc * 10) / 10;
+                    
+                    imcValue.textContent = imcRounded.toFixed(1);
+                    
+                    let category = '';
+                    let percentage = 0;
+                    let recommendation = '';
+                    
+                    if (imc < 18.5) {
+                        category = 'Bajo peso';
+                        percentage = 20;
+                        recommendation = 'Tu IMC indica que estás por debajo del peso recomendado. Es importante consultar con un nutricionista para desarrollar un plan que te ayude a alcanzar un peso saludable.';
+                    } else if (imc < 25) {
+                        category = 'Peso normal';
+                        percentage = 40;
+                        recommendation = '¡Felicidades! Tu IMC está dentro del rango normal. Mantén tus hábitos saludables y considera una consulta para optimizar tu nutrición.';
+                    } else if (imc < 30) {
+                        category = 'Sobrepeso';
+                        percentage = 60;
+                        recommendation = 'Tu IMC indica sobrepeso. Te recomendamos agendar una consulta para recibir un plan nutricional personalizado que te ayude a alcanzar un peso saludable.';
+                    } else if (imc < 35) {
+                        category = 'Obesidad grado I';
+                        percentage = 80;
+                        recommendation = 'Tu IMC indica obesidad grado I. Es importante consultar con un profesional para recibir orientación personalizada y mejorar tu salud.';
+                    } else {
+                        category = 'Obesidad grado II o superior';
+                        percentage = 100;
+                        recommendation = 'Tu IMC indica obesidad grado II o superior. Te recomendamos buscar atención profesional para desarrollar un plan integral que mejore tu salud.';
+                    }
+                    
+                    imcCategory.textContent = category;
+                    imcIndicator.style.width = `${percentage}%`;
+                    imcRecommendation.textContent = recommendation;
+                    
+                    imcResult.classList.remove('hidden');
+                }
+            });
+        });
+    </script>
+
+    <script id="nutritional-test-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.test-question');
+            const progressBar = document.getElementById('progress-bar');
+            const submitTest = document.getElementById('submit-test');
+            const testResult = document.getElementById('test-result');
+            const testScore = document.getElementById('test-score');
+            const testRecommendation = document.getElementById('test-recommendation');
+            const restartTest = document.getElementById('restart-test');
+            
+            let currentQuestion = 1;
+            const totalQuestions = questions.length;
+            
+            // Set up custom radio buttons
+            for (let i = 1; i <= totalQuestions; i++) {
+                const radioButtons = document.querySelectorAll(`input[name="q${i}"]`);
+                radioButtons.forEach(radio => {
+                    radio.addEventListener('change', function() {
+                        // Hide all selected indicators for this question
+                        const indicators = document.querySelectorAll(`.q${i}-radio-selected`);
+                        indicators.forEach(ind => ind.classList.add('hidden'));
+                        
+                        // Show the selected indicator
+                        const selectedIndicator = this.parentElement.querySelector(`.q${i}-radio-selected`);
+                        selectedIndicator.classList.remove('hidden');
+                        
+                        // Update border for all options
+                        const labels = document.querySelectorAll(`input[name="q${i}"]`).forEach(r => {
+                            r.parentElement.classList.remove('border-primary');
+                            r.parentElement.classList.add('border-gray-200');
+                        });
+                        
+                        // Update border for selected option
+                        this.parentElement.classList.remove('border-gray-200');
+                        this.parentElement.classList.add('border-primary');
+                    });
+                });
+            }
+            
+            // Handle next button clicks
+            const nextButtons = document.querySelectorAll('.next-question');
+            nextButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (currentQuestion < totalQuestions) {
+                        // Hide current question
+                        document.querySelector(`.test-question[data-question="${currentQuestion}"]`).classList.add('hidden');
+                        
+                        // Show next question
+                        currentQuestion++;
+                        document.querySelector(`.test-question[data-question="${currentQuestion}"]`).classList.remove('hidden');
+                        
+                        // Update progress bar
+                        const progress = (currentQuestion / totalQuestions) * 100;
+                        progressBar.style.width = `${progress}%`;
+                    }
+                });
+            });
+            
+            // Handle previous button clicks
+            const prevButtons = document.querySelectorAll('.prev-question');
+            prevButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (currentQuestion > 1) {
+                        // Hide current question
+                        document.querySelector(`.test-question[data-question="${currentQuestion}"]`).classList.add('hidden');
+                        
+                        // Show previous question
+                        currentQuestion--;
+                        document.querySelector(`.test-question[data-question="${currentQuestion}"]`).classList.remove('hidden');
+                        
+                        // Update progress bar
+                        const progress = (currentQuestion / totalQuestions) * 100;
+                        progressBar.style.width = `${progress}%`;
+                    }
+                });
+            });
+            
+            // Handle test submission
+            submitTest.addEventListener('click', function() {
+                // Calculate score
+                let score = 0;
+                for (let i = 1; i <= totalQuestions; i++) {
+                    const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                    if (selectedOption) {
+                        score += parseInt(selectedOption.value);
+                    }
+                }
+                
+                // Hide questions
+                document.getElementById('test-questions').classList.add('hidden');
+                
+                // Update score
+                testScore.textContent = `${score}/${totalQuestions * 3}`;
+                
+                // Update recommendation based on score
+                let recommendation = '';
+                if (score <= 7) {
+                    recommendation = `
+                        <p class="mb-2">Tus hábitos alimenticios necesitan mejorar significativamente. Te recomendamos:</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Aumentar el consumo de frutas y verduras a 5 porciones diarias</li>
+                            <li>Reducir drásticamente los alimentos procesados y comida rápida</li>
+                            <li>Incrementar la ingesta de agua a 8 vasos diarios</li>
+                            <li>Incorporar actividad física regular, al menos 3 veces por semana</li>
+                            <li>Establecer un horario regular de 5 comidas diarias</li>
+                        </ul>
+                    `;
+                } else if (score <= 11) {
+                    recommendation = `
+                        <p class="mb-2">Tus hábitos alimenticios son moderados, pero hay espacio para mejorar. Te recomendamos:</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Incrementar el consumo de frutas y verduras</li>
+                            <li>Limitar los alimentos procesados a ocasiones especiales</li>
+                            <li>Mantener una hidratación adecuada</li>
+                            <li>Aumentar la frecuencia de actividad física</li>
+                            <li>Distribuir mejor tus comidas a lo largo del día</li>
+                        </ul>
+                    `;
+                } else {
+                    recommendation = `
+                        <p class="mb-2">¡Felicidades! Tus hábitos alimenticios son bastante saludables. Para optimizarlos aún más:</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Mantén tu excelente consumo de frutas y verduras</li>
+                            <li>Continúa evitando los alimentos procesados</li>
+                            <li>Sigue con tu buena hidratación</li>
+                            <li>Mantén tu rutina de actividad física</li>
+                            <li>Considera consultar con un nutricionista para afinar detalles específicos de tu alimentación</li>
+                        </ul>
+                    `;
+                }
+                
+                testRecommendation.innerHTML = recommendation;
+                
+                // Show results
+                testResult.classList.remove('hidden');
+                
+                // Update progress bar to 100%
+                progressBar.style.width = '100%';
+            });
+            
+            // Handle restart test
+            restartTest.addEventListener('click', function() {
+                // Reset form
+                for (let i = 1; i <= totalQuestions; i++) {
+                    const radioButtons = document.querySelectorAll(`input[name="q${i}"]`);
+                    radioButtons.forEach(radio => {
+                        radio.checked = false;
+                        radio.parentElement.classList.remove('border-primary');
+                        radio.parentElement.classList.add('border-gray-200');
+                    });
+                    
+                    const indicators = document.querySelectorAll(`.q${i}-radio-selected`);
+                    indicators.forEach(ind => ind.classList.add('hidden'));
+                }
+                
+                // Hide results
+                testResult.classList.add('hidden');
+                
+                // Show first question
+                document.getElementById('test-questions').classList.remove('hidden');
+                questions.forEach(q => q.classList.add('hidden'));
+                questions[0].classList.remove('hidden');
+                
+                // Reset current question
+                currentQuestion = 1;
+                
+                // Reset progress bar
+                progressBar.style.width = '20%';
+            });
+        });
+    </script>
+</body>
+</html>
