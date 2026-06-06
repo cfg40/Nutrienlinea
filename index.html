@@ -218,25 +218,36 @@
 <section id="inicio" class="relative w-full bg-white py-2 md:py-6">
     <div class="container mx-auto px-4 flex flex-col md:flex-row-reverse items-center justify-center gap-4 min-h-[350px] md:min-h-[420px]">
         <!-- Imagen a la derecha, ocupa todo el alto del contenedor -->
-<div class="w-full md:w-1/2 flex justify-center items-stretch relative overflow-hidden">
+    <div class="w-full md:w-1/2 flex justify-center items-stretch relative overflow-hidden">
     <img src="img/cynthia4.png" alt="Nutricionista" class="w-full h-full object-cover object-center max-w-s md:max-w-s">
     <!-- Gradiente de transparencia de izquierda a derecha -->
     <div class="absolute inset-0 pointer-events-none"
          style="background: linear-gradient(to right, white 0%, transparent 50%, transparent 100%);"></div>
-</div>
-        <!-- Texto a la izquierda -->
-        <div class="w-full md:w-1/2 space-y-6 text-center md:text-left flex flex-col justify-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">Planes nutricionales personalizados</h1>
-            <p class="text-lg text-gray-700">Descubre cómo una alimentación equilibrada puede mejorar tu calidad de vida. Planes nutricionales adaptados a tus necesidades y objetivos personales.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <a href="https://wa.link/8822lt" target="_blank" rel="noopener" class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">
-    Consulta Gratuita
-</a>
-                    <a href="#Beneficios" class="bg-white text-primary border border-primary px-8 py-3 !rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap">
-                        Sobre Mí
-                    </a>
-            </div>
+    </div>
+<!-- Texto a la izquierda -->
+<div class="w-full md:w-1/2 space-y-6 text-center md:text-left flex flex-col justify-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">Planes nutricionales personalizados</h1>
+    <p class="text-lg text-gray-700">Descubre cómo una alimentación equilibrada puede mejorar tu calidad de vida. Planes nutricionales adaptados a tus necesidades y objetivos personales.</p>
+    
+    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center sm:items-start w-full">
+        
+        <!-- Contenedor del botón principal y nota aclaratoria (Corregido para no encoger el botón) -->
+        <div class="flex flex-col items-center md:items-start space-y-1.5 w-full sm:w-auto flex-shrink-0">
+            <a href="https://wa.link/8822lt" target="_blank" rel="noopener" class="bg-primary text-white px-8 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap text-center w-full sm:w-auto block">
+                HABLEMOS DE TU CASO
+            </a>
+            <span class="text-xs text-gray-500 italic max-w-[240px] leading-tight text-center md:text-left block w-full">
+                *Charla informativa breve de 10 min sin costo.
+            </span>
         </div>
+
+        <!-- Botón Sobre Mí -->
+        <a href="#Beneficios" class="bg-white text-primary border border-primary px-8 py-3 !rounded-button font-medium hover:bg-gray-50 transition-colors whitespace-nowrap w-full sm:w-auto text-center block">
+            Sobre Mí
+        </a>
+
+    </div>
+</div>
     </div>
 </section>
 
@@ -1202,8 +1213,8 @@
     </footer>
 
     <div class="fixed bottom-6 right-6 z-50">
-        <a href="#Ejercicios" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors">
-            <i class="ri-run-line ri-xl text-white"></i>
+        <a href="https://wa.link/svo6hx" class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors">
+            <i class="ri-whatsapp-line ri-xl text-white"></i>
         </a>
     </div>
 

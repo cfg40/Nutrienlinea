@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bio Link Nutricionista</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: EF7722;
+      --card-bg: #f7cb92;
+      --accent-orange: #EBEBEB;
+      --accent-green: #080808;
+      --gray: #e65a19;
+      --shadow: 0 2px 8px rgba(0,0,0,0.06);
+      --radius: 18px;
+    }
+    body {
+      background: var(--bg);
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      color: #e49c01;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 24px 12px 0 12px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 12px;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent-green);
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+    }
+    .hero-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--gray);
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .cards {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .card-btn {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px 18px;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #222;
+      text-decoration: none;
+      transition: box-shadow 0.2s;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+    .card-btn:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+      background: #fff;
+    }
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-btn.orange .card-icon svg { color: var(--accent-orange);}
+    .card-btn.red .card-icon svg { color: #e53935;}
+    .card-btn.green .card-icon svg { color: var(--accent-green);}
+    .card-btn.blue .card-icon svg { color: #2196f3;}
+    .card-btn.whatsapp .card-icon svg { color: #25d366;}
+    .card-btn.web .card-icon svg { color: #888;}
+    /* Nuevo esta semana */
+    .new-block {
+      background: #eafbe7;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px 18px;
+      margin-bottom: 28px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .new-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent-green);
+      margin-bottom: 6px;
+    }
+    .new-desc {
+      font-size: 0.98rem;
+      color: #222;
+    }
+    /* Social */
+    .social {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .social-icon {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #0e1101;
+      background: var(--card-bg);
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+      transition: background 0.2s, color 0.2s;
+      text-decoration: none;
+    }
+    .social-icon:hover svg {
+      color: var(--accent-orange);
+    }
+    .social-icon svg {
+      width: 22px;
+      height: 22px;
+      color: #0a0a0a;
+      transition: color 0.2s;
+    }
+    /* Footer */
+    footer {
+      width: 100%;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--gray);
+      padding: 12px 0 18px 0;
+      border-top: 1px solid #eee;
+      margin-top: 18px;
+    }
+    @media (max-width: 480px) {
+      .container {
+        padding: 18px 4px 0 4px;
+      }
+      .cards, .new-block {
+        padding: 0;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+   <!-- ...existing code... -->
+<!-- Logo reemplazado por nombre -->
+<div style="font-family:'Pacifico',cursive; font-size:2.5rem; color:#3d3d3d; margin-bottom:2px; letter-spacing:1px; text-shadow:2px 2px 4px rgba(12, 0, 0, 0.4);">
+  Cynthia Fuentes
+</div>
+
+<!-- Subtítulo profesional -->
+<div style="font-family:'Inter',Arial,sans-serif; font-size:0.8rem; color:#faa404; margin-bottom:8px; font-weight:600; letter-spacing:1px;">
+  NUTRICIONISTA CNP 4000
+</div>
+<!-- ...existing code... -->
+    <!-- Foto perfil -->
+    <img src="img/CYNTHIA2.jpg" alt="Foto Nutricionista" class="profile-pic">
+    <!-- Hero -->
+    <div class="hero-title">RECURSOS Y PLANES NUTRICIONALES</div>
+    <div class="hero-sub">Descubre herramientas para mejorar tu salud</div>
+    <!-- Tarjetas principales -->
+    <div class="cards">
+      
+      <a href="https://chat.whatsapp.com/I3ggVmmQN4N4glmOeAz8Ul" class="card-btn red">
+        <span class="card-icon">
+          <!-- Heroicon: Heart -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="darkred" width="36" height="36" viewBox="0 0 576 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M275.5 6.6L209.2 103C198 119.3 192 138.6 192 158.3l0 1.7c0 53 43 96 96 96s96-43 96-96l0-1.7c0-19.8-6-39-17.2-55.3L300.5 6.6C297.7 2.5 293 0 288 0s-9.7 2.5-12.5 6.6zM109.3 341.5L66.7 384 32 384c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l320.5 0c29 0 57.3-9.3 80.7-26.5l126.6-93.3c17.8-13.1 21.6-38.1 8.5-55.9s-38.1-21.6-55.9-8.5L392.6 416 280 416c-13.3 0-24-10.7-24-24s10.7-24 24-24l72 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-152.2 0c-33.9 0-66.5 13.5-90.5 37.5z"/></svg></span>
+        Taller gratuito de Resistencia a la insulina y Prediabetes
+      </a>
+      <a href="https://wa.link/svo6hx" class="card-btn orange">
+        <span class="card-icon">
+          <!-- Heroicon: Bowl (usando emoji como no existe en Heroicons) -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="green" viewBox="0 0 448 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M380.9 97.1c-41.9-42-97.7-65.1-157-65.1-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480 117.7 449.1c32.4 17.7 68.9 27 106.1 27l.1 0c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1s56.2 81.2 56.1 130.5c0 101.8-84.9 184.6-186.6 184.6zM325.1 300.5c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8s-14.3 18-17.6 21.8c-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7s-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2s-9.7 1.4-14.8 6.9c-5.1 5.6-19.4 19-19.4 46.3s19.9 53.7 22.6 57.4c2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4s4.6-24.1 3.2-26.4c-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+        </span>
+        Agenda asesoría por WhatsApp
+      </a>
+      <a href="https://www.minutri.es/#calculadora" class="card-btn green">
+        <span class="card-icon">
+          <!-- Heroicon: Chart Bar -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="gray" viewBox="0 0 384 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-384c0-35.3-28.7-64-64-64L64 0zM96 64l192 0c17.7 0 32 14.3 32 32l0 32c0 17.7-14.3 32-32 32L96 160c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32zm16 168a24 24 0 1 1 -48 0 24 24 0 1 1 48 0zm80 24a24 24 0 1 1 0-48 24 24 0 1 1 0 48zm128-24a24 24 0 1 1 -48 0 24 24 0 1 1 48 0zM88 352a24 24 0 1 1 0-48 24 24 0 1 1 0 48zm128-24a24 24 0 1 1 -48 0 24 24 0 1 1 48 0zm80 24a24 24 0 1 1 0-48 24 24 0 1 1 0 48zM64 424c0-13.3 10.7-24 24-24l112 0c13.3 0 24 10.7 24 24s-10.7 24-24 24L88 448c-13.3 0-24-10.7-24-24zm232-24c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24z"/></svg>
+        </span>
+        Calcular mi Índice de Masa Corporal (IMC)
+      </a>
+      <a href="https://www.minutri.es/#Ejercicios" class="card-btn blue">
+        <span class="card-icon">
+          <!-- Heroicon: Play Circle -->
+          <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 640 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M96 112c0-26.5 21.5-48 48-48s48 21.5 48 48l0 112 256 0 0-112c0-26.5 21.5-48 48-48s48 21.5 48 48l0 16 16 0c26.5 0 48 21.5 48 48l0 48c17.7 0 32 14.3 32 32s-14.3 32-32 32l0 48c0 26.5-21.5 48-48 48l-16 0 0 16c0 26.5-21.5 48-48 48s-48-21.5-48-48l0-112-256 0 0 112c0 26.5-21.5 48-48 48s-48-21.5-48-48l0-16-16 0c-26.5 0-48-21.5-48-48l0-48c-17.7 0-32-14.3-32-32s14.3-32 32-32l0-48c0-26.5 21.5-48 48-48l16 0 0-16z"/></svg>
+        </span>
+        Ver ejercicios para hacer en casa
+      </a>
+      <a href="https://www.minutri.es/#test" class="card-btn whatsapp">
+        <span class="card-icon">
+          <!-- Heroicon: Chat Bubble Left Ellipsis -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="darkred" viewBox="0 0 512 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M256 512a256 256 0 1 1 0-512 256 256 0 1 1 0 512zM374 145.7c-10.7-7.8-25.7-5.4-33.5 5.3L221.1 315.2 169 263.1c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l72 72c5 5 11.8 7.5 18.8 7s13.4-4.1 17.5-9.8L379.3 179.2c7.8-10.7 5.4-25.7-5.3-33.5z"/></svg>
+        </span>
+        Evaluar mis hábitos de alimentación
+      </a>
+      <a href="https://www.minutri.es/" class="card-btn web">
+        <span class="card-icon">
+          <!-- Heroicon: Globe Alt -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M351.9 280l-190.9 0c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zM160.9 232l190.9 0C349 167.5 334.7 108.1 314.4 64.6 303 40.2 290.7 22.8 279.3 12.2 268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4zm-48 0C116.4 146.4 138.5 66.9 170.8 14.7 78.7 47.3 10.9 131.2 1.5 232l111.4 0zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3L1.5 280zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3l-111.4 0zm111.4-48C501.9 131.2 434.1 47.3 342 14.7 374.3 66.9 396.4 146.4 399.9 232l111.4 0z"/></svg>
+        </span>
+        Ir a mi página oficial
+      </a>
+    </div>
+    <!-- Nuevo esta semana -->
+    <!-- <div class="new-block">
+      <div class="new-title">Nuevo recurso disponible</div>
+      <div class="new-desc"> -->
+        <!-- Heroicon: Check Circle -->
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:6px;" width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#4caf50" stroke-width="2"/><path stroke="#4caf50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg>
+        Checklist de hábitos saludables
+      </div>
+    </div> -->
+    <!-- Social -->
+
+<div class="social">
+<a href="https://www.tiktok.com/@nutrienlinea2025?_t=ZS-90GDi0Cn4cL&_r=1" 
+   class="social-icon" 
+   title="TikTok" 
+   target="_blank">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor" width="24" height="24">
+    <path d="M168.1,44.7A48.3,48.3,0,0,0,144,0H104V176a24,24,0,1,1-24-24,23.9,23.9,0,0,1,12.6,3.4V116.3A64,64,0,1,0,104,240h40a64,64,0,0,0,64-64V88.7A88.3,88.3,0,0,1,168.1,44.7Z"/>
+  </svg>
+</a>
+
+  <a href="https://web.facebook.com/profile.php?id=100053269314139" class="social-icon" title="Facebook" target="_blank">
+    <!-- Facebook: F logo -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M22 12c0-5.522-4.478-10-10-10S2 6.478 2 12c0 5.019 3.676 9.163 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.324 21.163 22 17.019 22 12"/>
+    </svg>
+  </a>
+  <a href="https://www.instagram.com/nutrienlinea28?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-icon" title="Instagram" target="_blank">
+    <!-- Instagram: Camera -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <rect x="2" y="2" width="20" height="20" rx="6" stroke="currentColor" stroke-width="2"/>
+      <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+      <circle cx="17" cy="7" r="1" fill="currentColor"/>
+    </svg>
+  </a>
+  <!-- <a href="#" class="social-icon" title="YouTube" target="_blank"> -->
+    <!-- YouTube: Play -->
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+      <rect x="3" y="7" width="18" height="10" rx="4"/>
+      <polygon points="10,10 16,12 10,14" fill="#fff"/>
+    </svg>
+  </a> -->
+</div>
+<!-- ...existing code... -->
+  </div>
+  <footer>
+    <a href="#" style="color:inherit;text-decoration:underline;">Aviso legal</a> &nbsp;|&nbsp;
+    <a href="#" style="color:inherit;text-decoration:underline;">Política de privacidad</a>
+  </footer>
+</body>
+</html>
