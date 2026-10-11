@@ -184,7 +184,7 @@
       flex: 1 1 auto;
       min-width: 0;
       font-family: var(--font-display);
-      font-size: 1.8rem;
+      font-size: 1.98rem;
       font-weight: 800;
       color: var(--color-text-title);
     }
@@ -197,7 +197,7 @@
 
     .brand span {
       color: var(--color-primary);
-      font-size: 2rem;
+      font-size: 2.2rem;
       transition: transform 0.2s ease;
     }
 
@@ -212,13 +212,13 @@
     .brand-icon {
       background: transparent;
       color: var(--color-primary);
-      width: 65px;
-      height: 65px;
+      width: 71.5px;
+      height: 71.5px;
       border-radius: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.8rem;
+      font-size: 1.98rem;
       padding: 0;
       box-shadow: none;
       transition: transform 0.2s ease;
@@ -241,7 +241,7 @@
     }
 
     .hero {
-      padding: 48px 0 60px;
+      padding: 0px 0 60px;
       background: linear-gradient(180deg, #FFFFFF 0%, var(--color-bg-light) 100%);
       text-align: center;
     }
@@ -859,7 +859,7 @@
   <header class="navbar">
     <div class="container navbar-inner">
       <a href="#" class="brand" aria-label="NutriEnLínea Inicio">
-        <img src="img/logo.png" alt="NutriEnLínea" class="brand-icon" style="width: 45px; height: 45px; object-fit: contain; border-radius: 0; background: transparent;">
+        <img src="img/logo.png" alt="NutriEnLínea" class="brand-icon" style="width: 49.5px; height: 49.5px; object-fit: contain; border-radius: 0; background: transparent;">
         <div>NutriEn<span>Línea</span></div>
       </a>
       <a href="https://wa.me/51971221917?text=Hola%20Lic.%20Cynthia%2C%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20Reto%20de%2028%20d%C3%ADas" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp nav-btn">
@@ -872,9 +872,193 @@
   </header>
 
   <main>
+
+</html>
+
+    
+<!-- CONTADOR REGRESIVO NUTRIENLÍNEA -->
+<style>
+  .contador-reto,
+  .contador-reto * {
+    box-sizing: border-box;
+  }
+
+  .contador-reto {
+    width: 100%;
+    margin: 0 !important;
+    padding: 24px 12px;
+    text-align: center;
+    background: #fffaf5;
+    color: #263746;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 0;
+  }
+
+  .contador-reto .contador-cajas {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    max-width: 620px;
+    margin: 0 auto 14px;
+    padding: 0;
+  }
+
+  .contador-reto .contador-caja {
+    padding: 18px 4px;
+    background: #ffefe2;
+    border-radius: 12px;
+  }
+
+  .contador-reto .contador-numero {
+    display: block;
+    color: #f36b21;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 800;
+    line-height: 1.15;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .contador-reto .contador-etiqueta {
+    display: block;
+    margin-top: 7px;
+    color: #455d70;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+
+ 
+.contador-reto .contador-fecha {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 12px 22px;
+  background: #53cf4b;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: clamp(15px, 3vw, 19px);
+  line-height: 1.4;
+  font-weight: 1000;
+  box-shadow: 0 4px 12px rgba(243, 107, 33, 0.25);
+}
+
+
+  .contador-reto .contador-frase {
+    margin: 0;
+    padding: 0;
+    color: #f36b21;
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: clamp(26px, 4vw, 36px);
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  @media (max-width: 420px) {
+    .contador-reto {
+      padding: 18px 8px;
+    }
+
+    .contador-reto .contador-cajas {
+      gap: 6px;
+    }
+
+    .contador-reto .contador-caja {
+      padding: 15px 2px;
+      border-radius: 9px;
+    }
+
+    .contador-reto .contador-etiqueta {
+      font-size: 8px;
+      letter-spacing: 0;
+    }
+
+    .contador-reto .contador-fecha {
+      font-size: 13px;
+    }
+  }
+</style>
+
+<section class="contador-reto">
+  <div class="contador-cajas">
+    <div class="contador-caja">
+      <span class="contador-numero" id="reto-dias">00</span>
+      <span class="contador-etiqueta">DÍAS</span>
+    </div>
+
+    <div class="contador-caja">
+      <span class="contador-numero" id="reto-horas">00</span>
+      <span class="contador-etiqueta">HORAS</span>
+    </div>
+
+    <div class="contador-caja">
+      <span class="contador-numero" id="reto-minutos">00</span>
+      <span class="contador-etiqueta">MINUTOS</span>
+    </div>
+
+    <div class="contador-caja">
+      <span class="contador-numero" id="reto-segundos">00</span>
+      <span class="contador-etiqueta">SEGUNDOS</span>
+    </div>
+  </div>
+
+  <p class="contador-fecha">
+    Inicio: Miércoles 28/Octubre/2026
+  </p>
+
+
+</section>
+
+<script>
+(function () {
+  const fechaInicio = new Date(
+    "2026-10-28T00:00:00-05:00"
+  ).getTime();
+
+  const ids = {
+    dias: document.getElementById("reto-dias"),
+    horas: document.getElementById("reto-horas"),
+    minutos: document.getElementById("reto-minutos"),
+    segundos: document.getElementById("reto-segundos")
+  };
+
+  function actualizarContador() {
+    const diferencia = fechaInicio - Date.now();
+
+    if (diferencia <= 0) {
+      Object.values(ids).forEach(el => {
+        el.textContent = "00";
+      });
+
+      clearInterval(intervalo);
+      return;
+    }
+
+    const total = Math.floor(diferencia / 1000);
+
+    ids.dias.textContent =
+      String(Math.floor(total / 86400)).padStart(2, "0");
+
+    ids.horas.textContent =
+      String(Math.floor((total % 86400) / 3600)).padStart(2, "0");
+
+    ids.minutos.textContent =
+      String(Math.floor((total % 3600) / 60)).padStart(2, "0");
+
+    ids.segundos.textContent =
+      String(total % 60).padStart(2, "0");
+  }
+
+  actualizarContador();
+  const intervalo = setInterval(actualizarContador, 1000);
+})();
+</script>
+<!-- FIN DEL CONTADOR -->
+
+
+
     <section class="hero">
+      
       <div class="container hero-content">
-        <span class="badge">Empezamos el <strong>02 de Noviembre del 2026</strong></span>
         <h1 class="hero-title">
           Reto de 28 días para <span>bajar de peso</span>
         </h1>
@@ -884,8 +1068,8 @@
 
         <!-- CTA 1 (Inicio / Hero) -->
         <div class="hero-cta">
-          <a href="https://wa.me/51971221917?text=Hola%20Lic.%20Cynthia%2C%20quiero%20unirme%20a%20la%20comunidad%20y%20conocer%20los%20detalles%20del%20Reto%20de%2028%20d%C3%ADas" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg js-wa-trigger">
-            <span>Únete Gratis al grupo de Whatsapp</span>
+          <a href="https://chat.whatsapp.com/I3ggVmmQN4N4glmOeAz8Ul" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg js-wa-trigger">
+            <span>Únete Gratis a la comunidad</span>
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
           <div class="cta-subtext">
@@ -1006,8 +1190,8 @@
           <p>
             Formar parte de un grupo de personas comprometidas multiplica tu constancia. Recibe apoyo diario de tu nutricionista y de la comunidad en WhatsApp.
           </p>
-          <a href="https://wa.me/51971221917?text=Hola%20Lic.%20Cynthia%2C%20quiero%20sumarme%20a%20la%20comunidad%20de%20WhatsApp%20del%20Reto%20de%2028%20d%C3%ADas" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg js-wa-trigger">
-            <span>Quiero Unirme a la Comunidad</span>
+          <a href="https://chat.whatsapp.com/I3ggVmmQN4N4glmOeAz8Ul" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg js-wa-trigger">
+            <span>Quiero Unirme Gratis a la Comunidad</span>
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
             </svg>
@@ -1062,17 +1246,17 @@
         </div>
 
         <div class="pricing-card">
-          <div class="pricing-tag">Edición Exclusiva</div>
+          <div class="pricing-tag">OFERTA EXCLUSIVA</div>
           
           <!-- ESPACIO EDITABLE: FECHA DE INICIO -->
           <div class="pricing-date">
-            📅 Inicio del próximo grupo: <strong>LUNESES 02 DE NOVIEMBRE</strong>
+            📅 Inicio del próximo grupo: <strong>LUNES 28 DE OCTUBRE</strong>
           </div>
 
           <!-- ESPACIO EDITABLE: PRECIO -->
           <div class="price-value">
-            <span class="price-normal">Precio regular: S/ 200.00</span>
-            <span class="price-current">S/ 129.00</span>
+            <span class="price-normal"> <strong> Precio regular: S/ 200.00</strong></strong></span>
+            <span class="price-current">S/ 110.00</span>
           </div>
           <div class="price-note">
             Pago único por los 28 días completos de acompañamiento profesional
@@ -1103,7 +1287,7 @@
 
           <!-- CTA 3 (Final / Inscripción) -->
           <a href="https://wa.me/51971221917?text=Hola%20Lic.%20Cynthia%2C%20deseo%20inscribirme%20al%20Reto%20de%2028%20d%C3%ADas%20por%20WhatsApp" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg js-wa-trigger" style="width: 100%;">
-            <span>Inscribirme por WhatsApp</span>
+            <span>Quiero unirme a la comunidad</span>
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
             </svg>
@@ -1192,7 +1376,7 @@
         NutriEn<span>Línea</span>
       </div>
       <p style="color: #D1D5DB; font-size: 0.95rem;">
-        Atención nutricional online en todo el Perú • Lic. Cynthia Fuentes (CNP)
+        Atención nutricional online en todo el Perú • Lic. Cynthia Fuentes (CNP 4000)
       </p>
       <p style="color: #9CA3AF; font-size: 0.85rem;">
         Teléfono / WhatsApp de atención: <strong>+51 971 221 917</strong>
