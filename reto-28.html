@@ -174,16 +174,25 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 12px;
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 10px;
+      flex: 1 1 auto;
+      min-width: 0;
       font-family: var(--font-display);
       font-size: 1.8rem;
       font-weight: 800;
       color: var(--color-text-title);
+    }
+
+    .brand > div {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .brand span {
@@ -222,6 +231,7 @@
     .nav-btn {
       padding: 10px 18px;
       font-size: 0.875rem;
+      flex-shrink: 0;
       transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
     }
 
@@ -804,6 +814,37 @@
 
     /* Mobile adjustments */
     @media (max-width: 640px) {
+      .navbar {
+        padding: 10px 0;
+      }
+
+      .navbar-inner {
+        gap: 8px;
+      }
+
+      .brand {
+        gap: 6px;
+        font-size: clamp(1rem, 4vw, 1.45rem);
+      }
+
+      .brand span {
+        font-size: clamp(1.1rem, 4.5vw, 1.6rem);
+      }
+
+      .brand-icon {
+        width: 36px !important;
+        height: 36px !important;
+      }
+
+      .nav-btn {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+      }
+
+      .nav-btn span {
+        white-space: nowrap;
+      }
+
       .btn-lg {
         max-width: 100%;
       }
