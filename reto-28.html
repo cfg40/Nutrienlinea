@@ -112,7 +112,7 @@
     .btn-primary:hover {
       background-color: var(--color-primary-hover);
       transform: translateY(-2px);
-      box-shadow: 0 12px 24px rgba(255, 107, 53, 0.45);
+      box-shadow: 0 12px 24px rgba(15, 187, 29, 0.45);
     }
 
     .btn-whatsapp {
@@ -201,6 +201,25 @@
       transition: transform 0.2s ease;
     }
 
+    @media (max-width: 640px) {
+      .navbar {
+        padding: 12px 0;
+      }
+
+      .brand {
+        font-size: 2.15rem;
+      }
+
+      .brand span {
+        font-size: 2.45rem;
+      }
+
+      .brand-icon {
+        width: 54px !important;
+        height: 54px !important;
+      }
+    }
+
     .brand:hover {
       transform: translateY(-1px);
     }
@@ -262,16 +281,35 @@
       color: var(--color-primary);
       position: relative;
       display: inline-block;
+      font-size: 0.75em;
+      line-height: 1.2;
     }
 
     .hero-subtitle {
-      font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+      font-size: clamp(0.79rem, 1.9vw, 0.94rem);
       color: var(--color-text-body);
       margin-bottom: 28px;
       font-weight: 400;
     }
 
-    .hero-cta {
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        line-height: 1;
+        white-space: nowrap;
+        letter-spacing: -0.04em;
+      }
+
+      .hero-title span {
+        display: block;
+        font-size: 0.62em;
+        line-height: 1.15;
+        margin-top: 4px;
+        white-space: normal;
+      }
+    }
+
+    .hero- cta {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -299,13 +337,14 @@
     }
 
     .video-container {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-      height: 0;
-      overflow: hidden;
-      border-radius: var(--radius-md);
-      background-color: #111827;
-    }
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+  }
 
     .video-container iframe,
     .video-container video,
@@ -862,12 +901,6 @@
         <img src="img/logo.png" alt="NutriEnLínea" class="brand-icon" style="width: 49.5px; height: 49.5px; object-fit: contain; border-radius: 0; background: transparent;">
         <div>NutriEn<span>Línea</span></div>
       </a>
-      <a href="https://wa.me/51971221917?text=Hola%20Lic.%20Cynthia%2C%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20Reto%20de%2028%20d%C3%ADas" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp nav-btn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
-        </svg>
-        <span>Escríbenos</span>
-      </a>
     </div>
   </header>
 
@@ -877,6 +910,7 @@
 
     
 <!-- CONTADOR REGRESIVO NUTRIENLÍNEA -->
+<!-- CONTADOR REGRESIVO NUTRIENLÍNEA (Versión Súper Compacta en Altura) -->
 <style>
   .contador-reto,
   .contador-reto * {
@@ -886,7 +920,7 @@
   .contador-reto {
     width: 100%;
     margin: 0 !important;
-    padding: 24px 12px;
+    padding: 10px 10px; /* Reducido más el alto superior e inferior */
     text-align: center;
     background: #fffaf5;
     color: #263746;
@@ -897,83 +931,70 @@
   .contador-reto .contador-cajas {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 10px;
-    max-width: 620px;
-    margin: 0 auto 14px;
+    gap: 8px; 
+    max-width: 580px; /* El ancho se mantiene igual */
+    margin: 0 auto 6px; /* Menor margen inferior */
     padding: 0;
   }
 
   .contador-reto .contador-caja {
-    padding: 18px 4px;
+    padding: 6px 4px; /* Reducido el alto interno de las cajas un 20% más */
     background: #ffefe2;
-    border-radius: 12px;
+    border-radius: 8px;
   }
 
   .contador-reto .contador-numero {
     display: block;
     color: #f36b21;
-    font-size: clamp(28px, 5vw, 44px);
+    font-size: clamp(20px, 3.5vw, 28px); /* Letras un poco más compactas en altura */
     font-weight: 800;
-    line-height: 1.15;
+    line-height: 1.1;
     font-variant-numeric: tabular-nums;
   }
 
   .contador-reto .contador-etiqueta {
     display: block;
-    margin-top: 7px;
+    margin-top: 2px; /* Margen superior muy ajustado */
     color: #455d70;
-    font-size: 10px;
+    font-size: 8px; /* Ligeramente más compacto */
     font-weight: bold;
     letter-spacing: 0.5px;
   }
 
- 
-.contador-reto .contador-fecha {
-  display: inline-block;
-  margin: 0 0 16px;
-  padding: 12px 22px;
-  background: #53cf4b;
-  color: #ffffff;
-  border-radius: 10px;
-  font-size: clamp(15px, 3vw, 19px);
-  line-height: 1.4;
-  font-weight: 1000;
-  box-shadow: 0 4px 12px rgba(243, 107, 33, 0.25);
-}
-
-
-  .contador-reto .contador-frase {
+  .contador-reto .contador-fecha {
+    display: inline-block;
     margin: 0;
-    padding: 0;
-    color: #f36b21;
-    font-family: "Brush Script MT", "Segoe Script", cursive;
-    font-size: clamp(26px, 4vw, 36px);
-    font-style: italic;
-    font-weight: bold;
-    line-height: 1.2;
+    padding: 6px 16px;
+    background: #0f172a;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: clamp(14.4px, 2.64vw, 18px);
+    line-height: 1.3;
+    font-weight: 900;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.24);
   }
 
   @media (max-width: 420px) {
     .contador-reto {
-      padding: 18px 8px;
+      padding: 8px 6px;
     }
 
     .contador-reto .contador-cajas {
-      gap: 6px;
+      gap: 5px;
     }
 
     .contador-reto .contador-caja {
-      padding: 15px 2px;
-      border-radius: 9px;
+      padding: 5px 2px;
+      border-radius: 6px;
     }
 
     .contador-reto .contador-etiqueta {
-      font-size: 8px;
-      letter-spacing: 0;
+      font-size: 7px;
     }
 
     .contador-reto .contador-fecha {
-      font-size: 13px;
+      font-size: 13.2px;
+      padding: 5px 12px;
     }
   }
 </style>
@@ -1004,8 +1025,6 @@
   <p class="contador-fecha">
     Inicio: Miércoles 28/Octubre/2026
   </p>
-
-
 </section>
 
 <script>
@@ -1053,6 +1072,7 @@
 })();
 </script>
 <!-- FIN DEL CONTADOR -->
+<!-- FIN DEL CONTADOR -->
 
 
 
@@ -1060,15 +1080,15 @@
       
       <div class="container hero-content">
         <h1 class="hero-title">
-          Reto de 28 días para <span>bajar de peso</span>
+          RETO DE 28 DÍAS  <span>para bajar de peso de forma saludable</span>
         </h1>
         <p class="hero-subtitle">
-          Un <strong>plan nutricional 100% personalizado</strong>, flexible y con <strong>acompañamiento profesional continuo</strong>. Aprende a bajar de peso sin pasar hambre ni poner en riesgo tu salud.
+          Un <strong>plan nutricional 100% personalizado</strong>, flexible y con <strong>acompañamiento profesional continuo</strong>. 
         </p>
 
         <!-- CTA 1 (Inicio / Hero) -->
         <div class="hero-cta">
-          <a href="https://chat.whatsapp.com/I3ggVmmQN4N4glmOeAz8Ul" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg js-wa-trigger">
+          <a href="https://chat.whatsapp.com/I3ggVmmQN4N4glmOeAz8Ul" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg js-wa-trigger">
             <span>Únete Gratis a la comunidad</span>
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
@@ -1078,24 +1098,19 @@
           </div>
         </div>
 
-        <!-- Video de Presentación -->
-        <div class="video-wrapper">
-          <div class="video-container" id="videoBox">
-            <!-- NOTA PARA PERSONALIZAR EL VIDEO: 
-                 Puedes reemplazar este contenedor con un iframe de YouTube o Vimeo, por ejemplo:
-                 <iframe src="https://www.youtube.com/embed/TU_CODIGO_DE_VIDEO" allowfullscreen></iframe>
-            -->
-            <div class="video-placeholder">
-              <div class="play-btn" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-              <h3 style="color: #FFFFFF; font-size: 1.15rem; margin-bottom: 6px;">Video de Presentación del Reto</h3>
-              <p style="font-size: 0.85rem; color: #D1D5DB; max-width: 440px;">
-                Conoce a la Lic. Cynthia Fuentes y descubre cómo este método clínico de 28 días se adapta a tus comidas cotidianas.
-              </p>
-            </div>
-          </div>
-        </div>
+<!-- Video de Presentación -->
+<div class="video-wrapper">
+  <div class="video-container" id="videoBox">
+    <iframe
+      src="https://www.youtube.com/embed/8JBs7k8SPeI"
+      title="Presentación del Reto de 28 días de NutriEnLínea"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
 
       </div>
     </section>
@@ -1104,7 +1119,7 @@
       <div class="container">
         <div class="bio-card">
           <div class="bio-img-wrap">
-            <img src="https://images.unsplash.com/photo-1594824813637-bf7f6e0766f7?auto=format&fit=crop&w=480&q=80" alt="Lic. Cynthia Fuentes - Nutricionista Clínica" class="bio-avatar" onerror="this.src='https://placehold.co/240x240/FFE4D9/FF6B35?text=Cynthia+Fuentes'">
+            <img src="img/CYNTHIA2.jpg" alt="Lic. Cynthia Fuentes - Nutricionista Clínica" class="bio-avatar" onerror="this.src='https://placehold.co/240x240/FFE4D9/FF6B35?text=Cynthia+Fuentes'">
             <span class="bio-badge">Colegiatura Profesional CNP 4000</span>
           </div>
           <div class="bio-content">
@@ -1376,7 +1391,7 @@
         NutriEn<span>Línea</span>
       </div>
       <p style="color: #D1D5DB; font-size: 0.95rem;">
-        Atención nutricional online en todo el Perú • Lic. Cynthia Fuentes (CNP 4000)
+        Atención nutricional online en todo el Perú • Lic. Cynthia Fuent)
       </p>
       <p style="color: #9CA3AF; font-size: 0.85rem;">
         Teléfono / WhatsApp de atención: <strong>+51 971 221 917</strong>
