@@ -201,6 +201,57 @@
       transition: transform 0.2s ease;
     }
 
+
+.payment-methods {
+  display: grid;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.payment-group {
+  padding: 14px 16px;
+  border: 1px solid var(--color-gray-border);
+  border-radius: 10px;
+  background: var(--color-white);
+}
+
+.payment-group h4 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.payment-group p {
+  margin: 7px 0;
+  overflow-wrap: anywhere;
+}
+
+.payment-note {
+  margin-top: 12px !important;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+    
+.payment-number {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  overflow-wrap: anywhere;
+  margin-top: 4px;
+}
+
+.payment-separator {
+  border-top: 1px solid var(--color-gray-border);
+  margin: 14px 0;
+}
+
+.payment-note {
+  margin-top: 14px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+
     @media (max-width: 640px) {
       .navbar {
         padding: 12px 0;
@@ -920,7 +971,7 @@
   .contador-reto {
     width: 100%;
     margin: 0 !important;
-    padding: 10px 10px; /* Reducido más el alto superior e inferior */
+    padding: 5px 1px; /* Reducido más el alto superior e inferior */
     text-align: center;
     background: #fffaf5;
     color: #263746;
@@ -1000,6 +1051,9 @@
 </style>
 
 <section class="contador-reto">
+
+  
+
   <div class="contador-cajas">
     <div class="contador-caja">
       <span class="contador-numero" id="reto-dias">00</span>
@@ -1021,10 +1075,11 @@
       <span class="contador-etiqueta">SEGUNDOS</span>
     </div>
   </div>
-
-  <p class="contador-fecha">
+  <div>    <p class="contador-fecha">
     Inicio: Miércoles 28/Octubre/2026
   </p>
+ </div>
+
 </section>
 
 <script>
@@ -1080,7 +1135,7 @@
       
       <div class="container hero-content">
         <h1 class="hero-title">
-          RETO DE 28 DÍAS  <span>para bajar de peso de forma saludable</span>
+          RETO DE 28 DÍAS  <span>para bajar de peso saludablemente</span>
         </h1>
         <p class="hero-subtitle">
           Un <strong>plan nutricional 100% personalizado</strong>, flexible y con <strong>acompañamiento profesional continuo</strong>. 
@@ -1089,7 +1144,7 @@
         <!-- CTA 1 (Inicio / Hero) -->
         <div class="hero-cta">
           <a href="https://chat.whatsapp.com/I3ggVmmQN4N4glmOeAz8Ul" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg js-wa-trigger">
-            <span>Únete Gratis a la comunidad</span>
+            <span>ÚNETE GRATIS A LA COMUNIDAD</span>
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
           <div class="cta-subtext">
@@ -1206,10 +1261,7 @@
             Formar parte de un grupo de personas comprometidas multiplica tu constancia. Recibe apoyo diario de tu nutricionista y de la comunidad en WhatsApp.
           </p>
           <a href="https://chat.whatsapp.com/I3ggVmmQN4N4glmOeAz8Ul" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg js-wa-trigger">
-            <span>Quiero Unirme Gratis a la Comunidad</span>
-            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
-            </svg>
+            <span>QUIERO UNIRME GRATIS A LA COMUNIDAD</span>
           </a>
         </div>
 
@@ -1228,23 +1280,29 @@
           <div class="step-item">
             <div class="step-num">1</div>
             <h4>Inscripción por WhatsApp</h4>
-            <p>Escribes al canal oficial para confirmar tu cupo y completar un breve cuestionario nutricional inicial.</p>
+            <p>Envía un mensaje al WhatsApp <b>[+51 971 221917]</b> para confirmar tu cupo y completar un breve cuestionario nutricional inicial.</p>
           </div>
-
+          
           <div class="step-item">
             <div class="step-num">2</div>
-            <h4>Entrega de tu Plan</h4>
-            <p>Recibes tu pauta personalizada y tus guías digitales en formato PDF listas para consultar en tu celular.</p>
+            <h4>Primera Charla virtual</h4>
+            <p>Participas en una reunión inicial con la nutricionista para despejar dudas, recibir orientación y establecer objetivos.</p>
           </div>
 
           <div class="step-item">
             <div class="step-num">3</div>
+            <h4>Entrega de tu Plan</h4>
+            <p>Recibes tu plan nutricional personalizado y tus guías digitales en formato PDF listas para consultar en tu celular.</p>
+          </div>
+
+          <div class="step-item">
+            <div class="step-num">4</div>
             <h4>Comunidad y Seguimiento</h4>
             <p>Te integras al grupo de participantes y consultas tus dudas en tiempo real con la nutricionista durante las 4 semanas.</p>
           </div>
 
           <div class="step-item">
-            <div class="step-num">4</div>
+            <div class="step-num">5</div>
             <h4>Sesión Final de Resultados</h4>
             <p>Participas en la reunión de cierre para consolidar tus hábitos ganados y proyectar tu bienestar continuo.</p>
           </div>
@@ -1265,7 +1323,7 @@
           
           <!-- ESPACIO EDITABLE: FECHA DE INICIO -->
           <div class="pricing-date">
-            📅 Inicio del próximo grupo: <strong>LUNES 28 DE OCTUBRE</strong>
+            📅 Inicio del próximo grupo: <strong>MIÉRCOLES 28 DE OCTUBRE</strong>
           </div>
 
           <!-- ESPACIO EDITABLE: PRECIO -->
@@ -1301,8 +1359,8 @@
           </ul>
 
           <!-- CTA 3 (Final / Inscripción) -->
-          <a href="https://wa.me/51971221917?text=Hola%20Lic.%20Cynthia%2C%20deseo%20inscribirme%20al%20Reto%20de%2028%20d%C3%ADas%20por%20WhatsApp" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg js-wa-trigger" style="width: 100%;">
-            <span>Quiero unirme a la comunidad</span>
+          <a href="https://chat.whatsapp.com/I3ggVmmQN4N4glmOeAz8Ul" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg js-wa-trigger" style="width: 100%;">
+            <span>QUIERO UNIRME GRATIS A LA COMUNIDAD</span>
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
             </svg>
@@ -1369,16 +1427,42 @@
             </div>
           </div>
 
-          <!-- FAQ 5 -->
-          <div class="faq-item">
-            <button class="faq-question" type="button">
-              <span>¿Cuáles son los medios de pago disponibles en Perú?</span>
-              <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-            </button>
-            <div class="faq-answer">
-              <p>Aceptamos transferencias BCP, BBVA, Interbank, así como pagos directos mediante Yape y Plin para tu total comodidad.</p>
+         
+        <!-- FAQ 5 -->
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span>¿Cuáles son los medios de pago disponibles en Perú?</span>
+            <svg class="faq-icon" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+
+          <div class="faq-answer">
+            <p>Para tu comodidad, puedes realizar el pago mediante los siguientes medios:</p>
+
+            <div class="payment-methods">
+
+              <div class="payment-group">
+                <h4>Titular: Cynthia Fuentes P.</h4>
+                <p><strong>BCP:</strong> 390 95799373013</p>
+                <h4>Titular: Cristhian Fuentes G.</h4>
+                <p><strong>Interbank:</strong> 898 3303740041</p>
+              </div>
+
+              <div class="payment-group">
+                <h4>Titular: Cynthia Fuentes P.</h4>
+                <p><strong>Yape/Plin:</strong> 986 110678</p>
+                <p class="payment-note">
+                  Después de realizar el pago, envíanos tu comprobante por WhatsApp al 971 221917
+                </p>
+              </div>
+
             </div>
           </div>
+        </div>
+
         </div>
 
       </div>
@@ -1391,7 +1475,7 @@
         NutriEn<span>Línea</span>
       </div>
       <p style="color: #D1D5DB; font-size: 0.95rem;">
-        Atención nutricional online en todo el Perú • Lic. Cynthia Fuent)
+        Atención nutricional online en todo el Perú • Lic. Cynthia Fuentes, CNP 4000 • Especialista en nutrición clínica y hábitos saludables
       </p>
       <p style="color: #9CA3AF; font-size: 0.85rem;">
         Teléfono / WhatsApp de atención: <strong>+51 971 221 917</strong>
