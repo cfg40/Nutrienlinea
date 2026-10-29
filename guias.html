@@ -36,6 +36,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 
+  <!-- PDF.js Stylesheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js">
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -68,13 +71,6 @@
 
     .guia-item.activa h3 {
       color: #ea580c;
-    }
-
-    #visorDrive {
-      width: 100%;
-      height: 100%;
-      border: none;
-      background: white;
     }
 
     @media (max-width: 768px) {
@@ -197,9 +193,9 @@
 
       <div class="flex-1 p-4 md:p-6">
         <div id="areaVisor"
-          class="h-[calc(100vh-140px)] bg-white rounded-2xl border border-slate-200 overflow-hidden flex items-center justify-center">
+          class="h-[calc(100vh-140px)] bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col">
           
-          <div id="mensajeInicial" class="text-center px-6">
+          <div id="mensajeInicial" class="flex-1 flex flex-col items-center justify-center text-center px-6">
             <div class="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-4">
               <i class="ri-file-pdf-line text-3xl text-primary"></i>
             </div>
@@ -209,46 +205,59 @@
             </p>
           </div>
 
-          <iframe id="visorDrive" class="hidden"></iframe>
+          <!-- Contenedor del Visor Nativop con PDF.js -->
+          <div id="contenedorVisorPDF" class="hidden flex-1 flex flex-col h-full relative">
+            <!-- Barra superior limpia exclusiva de tu web -->
+            <div class="flex justify-between items-center px-5 py-2.5 bg-slate-50 border-b border-slate-200 z-10">
+              <span class="text-xs text-slate-500 font-medium">Guía protegida - Visualización interna</span>
+              <button onclick="imprimirGuiaActual()" 
+                class="bg-primary hover:bg-orange-600 text-white px-4 py-1.5 rounded-lg text-sm font-medium flex items-center gap-2 transition">
+                <i class="ri-printer-line"></i> Imprimir Guía
+              </button>
+            </div>
+            <!-- Iframe apuntando al visor embebido estándar de PDF.js -->
+            <iframe id="visorPdfJs" class="w-full flex-1 border-none bg-slate-100"></iframe>
+          </div>
+
         </div>
       </div>
     </main>
   </div>
 
-<script>
+  <script>
     // ============================================================
-    // 1. GUÍAS DISPONIBLES
+    // 1. GUÍAS DISPONIBLES (Apunta a archivos PDF locales o directos)
     // ============================================================
     const GUIAS = [
       {
         id: 1,
         titulo: "Guía 1",
         descripcion: "GUIA DE ALIMENTACIÓN PARA BAJAR DE PESO",
-        driveId: "1QwuxS9daaMpBqSKsRnZDLcKwNMdIkd0L"
+        archivoUrl: "guias/guia1.pdf" // Coloca tus PDFs en una carpeta "guias" en tu GitHub Pages o un enlace directo
       },
       {
         id: 2,
         titulo: "Guía 2",
         descripcion: "GUIA DE ENTRENAMIENTO EN CASA",
-        driveId: "1ccgyK8thnJCPEQx19SkGBEKIQW_W6TZ_"
+        archivoUrl: "guias/guia2.pdf"
       },
       {
         id: 3,
         titulo: "Guía 3",
         descripcion: "GUIA DE INTERCAMBIO DE ALIMENTOS",
-        driveId: "1xrwNmUyfb6-GeC8BXLnxaM-_-MaM5EZp"
+        archivoUrl: "guias/guia3.pdf"
       },
       {
         id: 4,
         titulo: "Guía 4",
         descripcion: "GUIA DE MEDIDAS CORPORALES",
-        driveId: "1rQ28oXGAwS_BT1GJe94iTL-ufLWHRBT0"
+        archivoUrl: "guias/guia4.pdf"
       },
       {
         id: 5,
         titulo: "Guía 5",
         descripcion: "GUIA PARA COMER FUERA DE CASA",
-        driveId: "10_WUXR6jjqV7up6HvZr_Q_09Z8mP7eNS"
+        archivoUrl: "guias/guia5.pdf"
       }
     ];
 
@@ -270,20 +279,19 @@
       }
     ];
 
-    // Variable global para controlar la guía activa actual para la impresión
-    let guiaActualId = null;
+    let guiaActualUrl = null;
 
     // ============================================================
     // 3. INICIO DE SESIÓN
     // ============================================================
     function iniciarSesion() {
-      const usuario = document.getElementById("usuario").value.trim().toLowerCase();
-      const clave = document.getElementById("clave").value;
+      const usuarioInput = document.getElementById("usuario").value.trim().toLowerCase();
+      const claveInput = document.getElementById("clave").value;
       const error = document.getElementById("mensajeError");
 
       const comprador = COMPRADORES.find(c =>
-        c.usuario.toLowerCase() === usuario &&
-        c.clave === clave
+        c.usuario.toLowerCase() === usuarioInput &&
+        c.clave === claveInput
       );
 
       if (!comprador) {
@@ -297,7 +305,7 @@
     }
 
     // ============================================================
-    // 4. MOSTRAR PANEL Y MENÚ (VISOR CON RECORTE PARA OCULTAR EL BOTÓN)
+    // 4. MOSTRAR PANEL Y MENÚ
     // ============================================================
     function mostrarPanel(comprador) {
       document.getElementById("pantallaLogin").classList.add("hidden");
@@ -305,34 +313,6 @@
 
       document.getElementById("nombreComprador").textContent =
         "Hola, " + comprador.nombre;
-
-      // Creamos la estructura fija del visor aplicando un contenedor con desbordamiento oculto 
-      // y un iframe ligeramente expandido para recortar la esquina superior derecha de Google Drive.
-      const areaVisor = document.getElementById("areaVisor");
-      areaVisor.innerHTML = `
-        <div style="position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; background: white;">
-          <!-- Barra superior con tu botón de impresión propio -->
-          <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; z-index: 20;">
-            <span style="font-size: 14px; color: #64748b; font-weight: 500;">Guía protegida - Lectura y formato de impresión</span>
-            <button onclick="imprimirGuiaActual()" 
-              style="background: #fb923c; color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; font-family: 'Poppins', sans-serif; transition: background 0.2s;"
-              onmouseover="this.style.background='#ea580c'" onmouseout="this.style.background='#fb923c'">
-              <i class="ri-printer-line"></i> Imprimir Guía
-            </button>
-          </div>
-
-          <!-- Contenedor del Visor con máscara de recorte -->
-          <div style="position: relative; width: 100%; flex: 1; overflow: hidden; background: white;">
-            <!-- Capa invisible de bloqueo por seguridad extra -->
-            <div style="position: absolute; top: 0; right: 0; width: 90px; height: 60px; z-index: 30; background: transparent;"></div>
-            
-            <!-- Iframe con desplazamiento superior negativo para ocultar la barra de herramientas de Google -->
-            <iframe id="visorDrive" src="" 
-              style="position: absolute; top: -50px; left: 0; width: 100%; height: calc(100% + 50px); border: none; background: white;">
-            </iframe>
-          </div>
-        </div>
-      `;
 
       const lista = document.getElementById("listaGuias");
       lista.innerHTML = "";
@@ -370,15 +350,12 @@
       });
 
       if (guiasDelComprador.length > 0) {
-        const primerItem = lista.firstChild;
-        abrirGuia(guiasDelComprador[0], primerItem);
+        abrirGuia(guiasDelComprador[0], lista.firstChild);
       }
     }
 
-    
-
     // ============================================================
-    // 5. ABRIR GUÍA (ACTUALIZA EL VISOR EXISTENTE AL INSTANTE)
+    // 5. ABRIR GUÍA CON VISOR LIMPIO
     // ============================================================
     function abrirGuia(guia, elemento) {
       document.querySelectorAll(".guia-item").forEach(i =>
@@ -392,14 +369,16 @@
       document.getElementById("tituloGuia").textContent = guia.titulo;
       document.getElementById("descripcionGuia").textContent = guia.descripcion;
 
-      // Guardamos el ID actual para el botón de impresión
-      guiaActualId = guia.driveId;
+      document.getElementById("mensajeInicial").classList.add("hidden");
+      const contenedorPDF = document.getElementById("contenedorVisorPDF");
+      contenedorPDF.classList.remove("hidden");
 
-      // Actualizamos únicamente la ruta src del iframe existente sin destruir el diseño
-      const visor = document.getElementById("visorDrive");
-      if (visor) {
-        visor.src = `https://drive.google.com/file/d/${guia.driveId}/preview?rm=minimal`;
-      }
+      guiaActualUrl = guia.archivoUrl;
+
+      // Usamos un visor de PDF integrado estándar con parámetros para ocultar barras secundarias si se desea
+      const visor = document.getElementById("visorPdfJs");
+      // Cargamos el PDF con controles mínimos del navegador (sin barras de Google Drive)
+      visor.src = `${guia.archivoUrl}#toolbar=0&navpanes=0&scrollbar=1`;
 
       if (window.innerWidth < 768) {
         document.getElementById("menuLateral").classList.remove("abierto");
@@ -407,12 +386,12 @@
     }
 
     // ============================================================
-    // 6. FUNCIÓN DE IMPRESIÓN SEGURA
+    // 6. IMPRESIÓN LIMPIA DIRECTA
     // ============================================================
     function imprimirGuiaActual() {
-      if (guiaActualId) {
-        const urlPdfDirecto = `https://drive.google.com/uc?export=download&id=${guiaActualId}`;
-        window.open(urlPdfDirecto, '_blank');
+      if (guiaActualUrl) {
+        // Abre el archivo PDF limpio en una pestaña para imprimir de forma inmediata
+        window.open(guiaActualUrl, '_blank');
       }
     }
 
@@ -432,16 +411,12 @@
     // 8. MANTENER SESIÓN AL RECARGAR
     // ============================================================
     const usuarioGuardado = sessionStorage.getItem("compradorActivo");
-
     if (usuarioGuardado) {
       const comprador = COMPRADORES.find(c => c.usuario === usuarioGuardado);
-
       if (comprador) {
         mostrarPanel(comprador);
       }
     }
   </script>
-
-
 </body>
 </html>
