@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guías | Nutrición & Bienestar</title>
+
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#fb923c',
+            secondary: '#38bdf8'
+          },
+          borderRadius: {
+            none: '0px',
+            sm: '4px',
+            DEFAULT: '8px',
+            md: '12px',
+            lg: '16px',
+            xl: '20px',
+            '2xl': '24px',
+            '3xl': '32px',
+            full: '9999px',
+            button: '8px'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8fafc;
+    }
+
+    .sidebar {
+      width: 320px;
+      min-width: 320px;
+      background: white;
+      border-right: 1px solid #e2e8f0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .guia-item {
+      cursor: pointer;
+      transition: all .2s ease;
+      border-left: 4px solid transparent;
+    }
+
+    .guia-item:hover {
+      background-color: #fff7ed;
+    }
+
+    .guia-item.activa {
+      background-color: #ffedd5;
+      border-left-color: #fb923c;
+    }
+
+    .guia-item.activa h3 {
+      color: #ea580c;
+    }
+
+    #visorDrive {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: white;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        position: fixed;
+        left: -340px;
+        z-index: 50;
+        transition: left .3s ease;
+        box-shadow: 0 0 30px rgba(0,0,0,.15);
+      }
+
+      .sidebar.abierto {
+        left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body class="text-slate-800">
+
+  <!-- LOGIN -->
+  <div id="pantallaLogin" class="min-h-screen flex items-center justify-center px-4">
+    <div class="bg-white w-full max-w-md rounded-2xl shadow-xl p-8">
+      <div class="text-center mb-6">
+        <div class="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-4">
+          <i class="ri-book-open-line text-3xl text-primary"></i>
+        </div>
+        <h1 class="text-2xl font-bold text-slate-900">Guías</h1>
+        <p class="text-slate-500 mt-2">
+          Ingresa con el usuario y contraseña que recibiste al comprar tu guía.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Usuario</label>
+          <input id="usuario" type="text" placeholder="Escribe tu usuario"
+            class="w-full px-4 py-3 border border-slate-200 rounded-button focus:outline-none focus:ring-2 focus:ring-primary/40">
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1">Contraseña</label>
+          <input id="clave" type="password" placeholder="Escribe tu contraseña"
+            class="w-full px-4 py-3 border border-slate-200 rounded-button focus:outline-none focus:ring-2 focus:ring-primary/40">
+        </div>
+
+        <p id="mensajeError" class="hidden text-sm text-red-600 bg-red-50 border border-red-100 rounded-button px-4 py-3">
+          Usuario o contraseña incorrectos.
+        </p>
+
+        <button onclick="iniciarSesion()"
+          class="w-full bg-primary hover:bg-orange-500 text-white font-semibold py-3 rounded-button transition">
+          Ingresar a mis guías
+        </button>
+      </div>
+
+      <div class="mt-6 text-center">
+        <a href="https://www.minutri.es"
+          class="inline-flex items-center gap-2 text-secondary hover:text-sky-600 font-medium">
+          <i class="ri-home-4-line"></i>
+          Conocer más sobre mí y mis planes
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANEL PRINCIPAL -->
+  <div id="panelGuia" class="hidden flex min-h-screen">
+
+    <!-- MENÚ LATERAL -->
+    <aside id="menuLateral" class="sidebar">
+      <div class="p-5 border-b border-slate-100">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-lg font-bold text-slate-900">Mis guías</h2>
+            <p id="nombreComprador" class="text-sm text-slate-500"></p>
+          </div>
+
+          <button onclick="cerrarSesion()"
+            class="text-slate-400 hover:text-red-500 transition"
+            title="Cerrar sesión">
+            <i class="ri-logout-box-r-line text-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <nav id="listaGuias" class="p-3 space-y-2"></nav>
+
+      <div class="p-5 border-t border-slate-100 mt-4">
+        <a href="https://www.minutri.es"
+          class="flex items-center justify-center gap-2 bg-secondary/10 text-secondary hover:bg-secondary hover:text-white font-medium py-3 rounded-button transition">
+          <i class="ri-home-4-line"></i>
+          Ir a mi página principal
+        </a>
+      </div>
+    </aside>
+
+    <!-- BOTÓN MÓVIL -->
+    <button id="botonMenu" onclick="alternarMenu()"
+      class="md:hidden fixed bottom-5 right-5 z-40 w-14 h-14 rounded-full bg-primary text-white shadow-lg flex items-center justify-center">
+      <i class="ri-menu-line text-2xl"></i>
+    </button>
+
+    <!-- VISOR -->
+    <main class="flex-1 flex flex-col min-w-0">
+      <header class="bg-white border-b border-slate-100 px-5 py-4 flex items-center justify-between">
+        <div>
+          <h1 id="tituloGuia" class="text-xl font-bold text-slate-900">Selecciona una guía</h1>
+          <p id="descripcionGuia" class="text-sm text-slate-500">
+            Elige una guía del menú para comenzar a leerla.
+          </p>
+        </div>
+
+        <a href="https://www.minutri.es"
+          class="hidden md:inline-flex items-center gap-2 bg-primary hover:bg-orange-500 text-white px-4 py-2 rounded-button font-medium transition">
+          <i class="ri-home-4-line"></i>
+          Mi web
+        </a>
+      </header>
+
+      <div class="flex-1 p-4 md:p-6">
+        <div id="areaVisor"
+          class="h-[calc(100vh-140px)] bg-white rounded-2xl border border-slate-200 overflow-hidden flex items-center justify-center">
+          
+          <div id="mensajeInicial" class="text-center px-6">
+            <div class="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <i class="ri-file-pdf-line text-3xl text-primary"></i>
+            </div>
+            <h2 class="text-lg font-semibold text-slate-800">Bienvenido/a</h2>
+            <p class="text-slate-500 mt-2">
+              Selecciona una guía en el menú de la izquierda para visualizarla.
+            </p>
+          </div>
+
+          <iframe id="visorDrive" class="hidden"></iframe>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // ============================================================
+    // 1. GUÍAS DISPONIBLES
+    // Reemplaza PEGA_AQUI_ID_DRIVE_1... por el ID de cada PDF.
+    // ============================================================
+    const GUIAS = [
+      {
+        id: 1,
+        titulo: "Guía 1",
+        descripcion: "GUIA DE ALIMENTACIÓN PARA BAJAR DE PESO",
+        driveId: "1QwuxS9daaMpBqSKsRnZDLcKwNMdIkd0L"
+      },
+      {
+        id: 2,
+        titulo: "Guía 2",
+        descripcion: "Descripción breve de la segunda guía.",
+        driveId: "PEGA_AQUI_ID_DRIVE_2"
+      },
+      {
+        id: 3,
+        titulo: "Guía 3",
+        descripcion: "Descripción breve de la tercera guía.",
+        driveId: "PEGA_AQUI_ID_DRIVE_3"
+      },
+      {
+        id: 4,
+        titulo: "Guía 4",
+        descripcion: "Descripción breve de la cuarta guía.",
+        driveId: "PEGA_AQUI_ID_DRIVE_4"
+      },
+      {
+        id: 5,
+        titulo: "Guía 5",
+        descripcion: "Descripción breve de la quinta guía.",
+        driveId: "PEGA_AQUI_ID_DRIVE_5"
+      }
+    ];
+
+    // ============================================================
+    // 2. COMPRADORES AUTORIZADOS
+    // Agrega aquí cada cliente con las guías que compró.
+    // ============================================================
+    const COMPRADORES = [
+      {
+        usuario: "cliente1",
+        clave: "Clave1234",
+        nombre: "Cliente 1",
+        guiasPermitidas: [1, 2, 3, 4, 5]
+      },
+      {
+        usuario: "cliente2",
+        clave: "Clave5678",
+        nombre: "Cliente 2",
+        guiasPermitidas: [3]
+      }
+    ];
+
+    // ============================================================
+    // 3. INICIO DE SESIÓN
+    // ============================================================
+    function iniciarSesion() {
+      const usuario = document.getElementById("usuario").value.trim().toLowerCase();
+      const clave = document.getElementById("clave").value;
+      const error = document.getElementById("mensajeError");
+
+      const comprador = COMPRADORES.find(c =>
+        c.usuario.toLowerCase() === usuario &&
+        c.clave === clave
+      );
+
+      if (!comprador) {
+        error.classList.remove("hidden");
+        return;
+      }
+
+      error.classList.add("hidden");
+
+      sessionStorage.setItem("compradorActivo", comprador.usuario);
+      mostrarPanel(comprador);
+    }
+
+    // ============================================================
+    // 4. MOSTRAR PANEL Y MENÚ
+    // ============================================================
+    function mostrarPanel(comprador) {
+      document.getElementById("pantallaLogin").classList.add("hidden");
+      document.getElementById("panelGuia").classList.remove("hidden");
+
+      document.getElementById("nombreComprador").textContent =
+        "Hola, " + comprador.nombre;
+
+      const lista = document.getElementById("listaGuias");
+      lista.innerHTML = "";
+
+      const guiasDelComprador = GUIAS.filter(g =>
+        comprador.guiasPermitidas.includes(g.id)
+      );
+
+      guiasDelComprador.forEach(guia => {
+        const item = document.createElement("div");
+        item.className = "guia-item p-4 rounded-lg";
+        item.dataset.id = guia.id;
+
+        item.innerHTML = `
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+              <i class="ri-file-pdf-line text-primary text-xl"></i>
+            </div>
+
+            <div>
+              <h3 class="font-semibold text-slate-900 leading-tight">
+                ${guia.titulo}
+              </h3>
+              <p class="text-sm text-slate-500 mt-1">
+                ${guia.descripcion}
+              </p>
+            </div>
+          </div>
+        `;
+
+        item.onclick = () => abrirGuia(guia, item);
+        lista.appendChild(item);
+      });
+    }
+
+    // ============================================================
+    // 5. ABRIR GUÍA EN EL VISOR
+    // ============================================================
+    function abrirGuia(guia, elemento) {
+      document.querySelectorAll(".guia-item").forEach(i =>
+        i.classList.remove("activa")
+      );
+
+      elemento.classList.add("activa");
+
+      document.getElementById("tituloGuia").textContent = guia.titulo;
+      document.getElementById("descripcionGuia").textContent = guia.descripcion;
+
+      document.getElementById("mensajeInicial").classList.add("hidden");
+
+      const visor = document.getElementById("visorDrive");
+      visor.classList.remove("hidden");
+      visor.src = `https://drive.google.com/file/d/${guia.driveId}/preview`;
+
+      if (window.innerWidth < 768) {
+        document.getElementById("menuLateral").classList.remove("abierto");
+      }
+    }
+
+    // ============================================================
+    // 6. MENÚ MÓVIL Y SESIÓN
+    // ============================================================
+    function alternarMenu() {
+      document.getElementById("menuLateral").classList.toggle("abierto");
+    }
+
+    function cerrarSesion() {
+      sessionStorage.removeItem("compradorActivo");
+      location.reload();
+    }
+
+    // ============================================================
+    // 7. MANTENER SESIÓN AL RECARGAR
+    // ============================================================
+    const usuarioGuardado = sessionStorage.getItem("compradorActivo");
+
+    if (usuarioGuardado) {
+      const comprador = COMPRADORES.find(c => c.usuario === usuarioGuardado);
+
+      if (comprador) {
+        mostrarPanel(comprador);
+      }
+    }
+  </script>
+
+</body>
+</html>
