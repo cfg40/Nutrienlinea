@@ -215,10 +215,9 @@
     </main>
   </div>
 
-  <script>
+<script>
     // ============================================================
     // 1. GUÍAS DISPONIBLES
-    // Reemplaza PEGA_AQUI_ID_DRIVE_1... por el ID de cada PDF.
     // ============================================================
     const GUIAS = [
       {
@@ -255,7 +254,6 @@
 
     // ============================================================
     // 2. COMPRADORES AUTORIZADOS
-    // Agrega aquí cada cliente con las guías que compró.
     // ============================================================
     const COMPRADORES = [
       {
@@ -271,6 +269,9 @@
         guiasPermitidas: [3]
       }
     ];
+
+    // Variable global para controlar la guía activa actual para la impresión
+    let guiaActualId = null;
 
     // ============================================================
     // 3. INICIO DE SESIÓN
@@ -291,13 +292,12 @@
       }
 
       error.classList.add("hidden");
-
       sessionStorage.setItem("compradorActivo", comprador.usuario);
       mostrarPanel(comprador);
     }
 
     // ============================================================
-    // 4. MOSTRAR PANEL Y MENÚ
+    // 4. MOSTRAR PANEL Y MENÚ (INICIALIZA EL VISOR UNA SOLA VEZ)
     // ============================================================
     function mostrarPanel(comprador) {
       document.getElementById("pantallaLogin").classList.add("hidden");
@@ -305,6 +305,29 @@
 
       document.getElementById("nombreComprador").textContent =
         "Hola, " + comprador.nombre;
+
+      // Creamos la estructura fija del visor una sola vez en el área de visualización
+      const areaVisor = document.getElementById("areaVisor");
+      areaVisor.innerHTML = `
+        <div style="position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; background: white;">
+          <!-- Barra superior con tu botón de impresión propio -->
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; z-index: 20;">
+            <span style="font-size: 14px; color: #64748b; font-weight: 500;">Guía protegida - Lectura y formato de impresión</span>
+            <button onclick="imprimirGuiaActual()" 
+              style="background: #fb923c; color: white; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 6px; font-family: 'Poppins', sans-serif; transition: background 0.2s;"
+              onmouseover="this.style.background='#ea580c'" onmouseout="this.style.background='#fb923c'">
+              <i class="ri-printer-line"></i> Imprimir Guía
+            </button>
+          </div>
+
+          <!-- Visor de Google Drive con ?rm=minimal (oculta botones de descarga/compartir) -->
+          <div style="position: relative; width: 100%; flex: 1; overflow: hidden;">
+            <iframe id="visorDrive" src="" 
+              style="width: 100%; height: 100%; border: none; background: white;">
+            </iframe>
+          </div>
+        </div>
+      `;
 
       const lista = document.getElementById("listaGuias");
       lista.innerHTML = "";
@@ -319,11 +342,10 @@
         item.dataset.id = guia.id;
 
         item.innerHTML = `
-          <div class="flex items-start gap-3">
+          <div class="flex items-start gap-3 pointer-events-none">
             <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
               <i class="ri-file-pdf-line text-primary text-xl"></i>
             </div>
-
             <div>
               <h3 class="font-semibold text-slate-900 leading-tight">
                 ${guia.titulo}
@@ -335,29 +357,44 @@
           </div>
         `;
 
-        item.onclick = () => abrirGuia(guia, item);
+        // Asignamos el evento de clic de forma directa y limpia
+        item.onclick = function() {
+          abrirGuia(guia, item);
+        };
+
         lista.appendChild(item);
       });
+
+      // Seleccionamos la primera guía por defecto al iniciar sesión
+      if (guiasDelComprador.length > 0) {
+        const primerItem = lista.firstChild;
+        abrirGuia(guiasDelComprador[0], primerItem);
+      }
     }
 
     // ============================================================
-    // 5. ABRIR GUÍA EN EL VISOR
+    // 5. ABRIR GUÍA (ACTUALIZA EL VISOR EXISTENTE AL INSTANTE)
     // ============================================================
     function abrirGuia(guia, elemento) {
       document.querySelectorAll(".guia-item").forEach(i =>
         i.classList.remove("activa")
       );
 
-      elemento.classList.add("activa");
+      if (elemento) {
+        elemento.classList.add("activa");
+      }
 
       document.getElementById("tituloGuia").textContent = guia.titulo;
       document.getElementById("descripcionGuia").textContent = guia.descripcion;
 
-      document.getElementById("mensajeInicial").classList.add("hidden");
+      // Guardamos el ID actual para el botón de impresión
+      guiaActualId = guia.driveId;
 
+      // Actualizamos únicamente la ruta src del iframe existente sin destruir el diseño
       const visor = document.getElementById("visorDrive");
-      visor.classList.remove("hidden");
-      visor.src = `https://drive.google.com/file/d/${guia.driveId}/preview`;
+      if (visor) {
+        visor.src = `https://drive.google.com/file/d/${guia.driveId}/preview?rm=minimal`;
+      }
 
       if (window.innerWidth < 768) {
         document.getElementById("menuLateral").classList.remove("abierto");
@@ -365,7 +402,17 @@
     }
 
     // ============================================================
-    // 6. MENÚ MÓVIL Y SESIÓN
+    // 6. FUNCIÓN DE IMPRESIÓN SEGURA
+    // ============================================================
+    function imprimirGuiaActual() {
+      if (guiaActualId) {
+        const urlPdfDirecto = `https://drive.google.com/uc?export=download&id=${guiaActualId}`;
+        window.open(urlPdfDirecto, '_blank');
+      }
+    }
+
+    // ============================================================
+    // 7. MENÚ MÓVIL Y SESIÓN
     // ============================================================
     function alternarMenu() {
       document.getElementById("menuLateral").classList.toggle("abierto");
@@ -377,7 +424,7 @@
     }
 
     // ============================================================
-    // 7. MANTENER SESIÓN AL RECARGAR
+    // 8. MANTENER SESIÓN AL RECARGAR
     // ============================================================
     const usuarioGuardado = sessionStorage.getItem("compradorActivo");
 
