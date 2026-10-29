@@ -15,15 +15,6 @@
             secondary: '#38bdf8'
           },
           borderRadius: {
-            none: '0px',
-            sm: '4px',
-            DEFAULT: '8px',
-            md: '12px',
-            lg: '16px',
-            xl: '20px',
-            '2xl': '24px',
-            '3xl': '32px',
-            full: '9999px',
             button: '8px'
           }
         }
@@ -36,15 +27,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 
-  <!-- PDF.js Stylesheet -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js">
-
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #f8fafc;
     }
-
     .sidebar {
       width: 320px;
       min-width: 320px;
@@ -53,26 +40,21 @@
       height: 100vh;
       overflow-y: auto;
     }
-
     .guia-item {
       cursor: pointer;
       transition: all .2s ease;
       border-left: 4px solid transparent;
     }
-
     .guia-item:hover {
       background-color: #fff7ed;
     }
-
     .guia-item.activa {
       background-color: #ffedd5;
       border-left-color: #fb923c;
     }
-
     .guia-item.activa h3 {
       color: #ea580c;
     }
-
     @media (max-width: 768px) {
       .sidebar {
         position: fixed;
@@ -81,7 +63,6 @@
         transition: left .3s ease;
         box-shadow: 0 0 30px rgba(0,0,0,.15);
       }
-
       .sidebar.abierto {
         left: 0;
       }
@@ -148,10 +129,7 @@
             <h2 class="text-lg font-bold text-slate-900">Mis guías</h2>
             <p id="nombreComprador" class="text-sm text-slate-500"></p>
           </div>
-
-          <button onclick="cerrarSesion()"
-            class="text-slate-400 hover:text-red-500 transition"
-            title="Cerrar sesión">
+          <button onclick="cerrarSesion()" class="text-slate-400 hover:text-red-500 transition" title="Cerrar sesión">
             <i class="ri-logout-box-r-line text-xl"></i>
           </button>
         </div>
@@ -187,7 +165,7 @@
         <a href="https://www.minutri.es"
           class="hidden md:inline-flex items-center gap-2 bg-primary hover:bg-orange-500 text-white px-4 py-2 rounded-button font-medium transition">
           <i class="ri-home-4-line"></i>
-          Mi web
+          Página principal
         </a>
       </header>
 
@@ -195,30 +173,16 @@
         <div id="areaVisor"
           class="h-[calc(100vh-140px)] bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col">
           
-          <div id="mensajeInicial" class="flex-1 flex flex-col items-center justify-center text-center px-6">
-            <div class="w-16 h-16 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-4">
-              <i class="ri-file-pdf-line text-3xl text-primary"></i>
-            </div>
-            <h2 class="text-lg font-semibold text-slate-800">Bienvenido/a</h2>
-            <p class="text-slate-500 mt-2">
-              Selecciona una guía en el menú de la izquierda para visualizarla.
-            </p>
-          </div>
-
-          <!-- Contenedor del Visor Nativop con PDF.js -->
-          <div id="contenedorVisorPDF" class="hidden flex-1 flex flex-col h-full relative">
-            <!-- Barra superior limpia exclusiva de tu web -->
-            <div class="flex justify-between items-center px-5 py-2.5 bg-slate-50 border-b border-slate-200 z-10">
-              <span class="text-xs text-slate-500 font-medium">Guía protegida - Visualización interna</span>
-              <button onclick="imprimirGuiaActual()" 
-                class="bg-primary hover:bg-orange-600 text-white px-4 py-1.5 rounded-lg text-sm font-medium flex items-center gap-2 transition">
-                <i class="ri-printer-line"></i> Imprimir Guía
+          <!-- Barra superior con el botón para abrir en Drive e imprimir -->
+          <div class="flex justify-between items-center px-5 py-3 bg-slate-50 border-b border-slate-200 z-10">
+            <span class="text-xs text-slate-500 font-medium">Visualizador de Guías</span>
+                <button onclick="imprimirGuiaActual()" class="bg-primary hover:bg-orange-600 text-white px-4 py-1.5 rounded-lg text-sm font-medium flex items-center gap-2 transition shadow-sm">
+                <i class="ri-printer-line text-lg"></i> Imprimir Guía
               </button>
-            </div>
-            <!-- Iframe apuntando al visor embebido estándar de PDF.js -->
-            <iframe id="visorPdfJs" class="w-full flex-1 border-none bg-slate-100"></iframe>
           </div>
 
+          <!-- Iframe directo de Google Drive -->
+          <iframe id="visorDrive" class="w-full flex-1 border-none bg-white" src=""></iframe>
         </div>
       </div>
     </main>
@@ -226,38 +190,38 @@
 
   <script>
     // ============================================================
-    // 1. GUÍAS DISPONIBLES (Apunta a archivos PDF locales o directos)
+    // 1. GUÍAS DISPONIBLES (Con tus IDs de Google Drive originales)
     // ============================================================
     const GUIAS = [
       {
         id: 1,
         titulo: "Guía 1",
         descripcion: "GUIA DE ALIMENTACIÓN PARA BAJAR DE PESO",
-        archivoUrl: "guias/guia1.pdf" // Coloca tus PDFs en una carpeta "guias" en tu GitHub Pages o un enlace directo
+        driveId: "1QwuxS9daaMpBqSKsRnZDLcKwNMdIkd0L"
       },
       {
         id: 2,
         titulo: "Guía 2",
         descripcion: "GUIA DE ENTRENAMIENTO EN CASA",
-        archivoUrl: "guias/guia2.pdf"
+        driveId: "1ccgyK8thnJCPEQx19SkGBEKIQW_W6TZ_"
       },
       {
         id: 3,
         titulo: "Guía 3",
         descripcion: "GUIA DE INTERCAMBIO DE ALIMENTOS",
-        archivoUrl: "guias/guia3.pdf"
+        driveId: "1xrwNmUyfb6-GeC8BXLnxaM-_-MaM5EZp"
       },
       {
         id: 4,
         titulo: "Guía 4",
         descripcion: "GUIA DE MEDIDAS CORPORALES",
-        archivoUrl: "guias/guia4.pdf"
+        driveId: "1rQ28oXGAwS_BT1GJe94iTL-ufLWHRBT0"
       },
       {
         id: 5,
         titulo: "Guía 5",
         descripcion: "GUIA PARA COMER FUERA DE CASA",
-        archivoUrl: "guias/guia5.pdf"
+        driveId: "10_WUXR6jjqV7up6HvZr_Q_09Z8mP7eNS"
       }
     ];
 
@@ -266,9 +230,9 @@
     // ============================================================
     const COMPRADORES = [
       {
-        usuario: "cliente1",
-        clave: "Clave1234",
-        nombre: "Cliente 1",
+        usuario: "Paciente",
+        clave: "Reto28dias",
+        nombre: "Paciente😊",
         guiasPermitidas: [1, 2, 3, 4, 5]
       },
       {
@@ -279,7 +243,7 @@
       }
     ];
 
-    let guiaActualUrl = null;
+    let guiaActualDriveId = null;
 
     // ============================================================
     // 3. INICIO DE SESIÓN
@@ -355,7 +319,7 @@
     }
 
     // ============================================================
-    // 5. ABRIR GUÍA CON VISOR LIMPIO
+    // 5. ABRIR GUÍA
     // ============================================================
     function abrirGuia(guia, elemento) {
       document.querySelectorAll(".guia-item").forEach(i =>
@@ -369,16 +333,10 @@
       document.getElementById("tituloGuia").textContent = guia.titulo;
       document.getElementById("descripcionGuia").textContent = guia.descripcion;
 
-      document.getElementById("mensajeInicial").classList.add("hidden");
-      const contenedorPDF = document.getElementById("contenedorVisorPDF");
-      contenedorPDF.classList.remove("hidden");
+      guiaActualDriveId = guia.driveId;
 
-      guiaActualUrl = guia.archivoUrl;
-
-      // Usamos un visor de PDF integrado estándar con parámetros para ocultar barras secundarias si se desea
-      const visor = document.getElementById("visorPdfJs");
-      // Cargamos el PDF con controles mínimos del navegador (sin barras de Google Drive)
-      visor.src = `${guia.archivoUrl}#toolbar=0&navpanes=0&scrollbar=1`;
+      const visor = document.getElementById("visorDrive");
+      visor.src = `https://drive.google.com/file/d/${guia.driveId}/preview?rm=minimal`;
 
       if (window.innerWidth < 768) {
         document.getElementById("menuLateral").classList.remove("abierto");
@@ -386,12 +344,12 @@
     }
 
     // ============================================================
-    // 6. IMPRESIÓN LIMPIA DIRECTA
+    // 6. ABRIR EN DRIVE (PARA IMPRIMIR O VER COMPLETO)
     // ============================================================
     function imprimirGuiaActual() {
-      if (guiaActualUrl) {
-        // Abre el archivo PDF limpio en una pestaña para imprimir de forma inmediata
-        window.open(guiaActualUrl, '_blank');
+      if (guiaActualDriveId) {
+        const urlDrive = `https://drive.google.com/file/d/${guiaActualDriveId}/view`;
+        window.open(urlDrive, '_blank');
       }
     }
 
