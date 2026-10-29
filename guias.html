@@ -297,7 +297,7 @@
     }
 
     // ============================================================
-    // 4. MOSTRAR PANEL Y MENÚ (INICIALIZA EL VISOR UNA SOLA VEZ)
+    // 4. MOSTRAR PANEL Y MENÚ (VISOR CON RECORTE PARA OCULTAR EL BOTÓN)
     // ============================================================
     function mostrarPanel(comprador) {
       document.getElementById("pantallaLogin").classList.add("hidden");
@@ -306,7 +306,8 @@
       document.getElementById("nombreComprador").textContent =
         "Hola, " + comprador.nombre;
 
-      // Creamos la estructura fija del visor una sola vez en el área de visualización
+      // Creamos la estructura fija del visor aplicando un contenedor con desbordamiento oculto 
+      // y un iframe ligeramente expandido para recortar la esquina superior derecha de Google Drive.
       const areaVisor = document.getElementById("areaVisor");
       areaVisor.innerHTML = `
         <div style="position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; background: white;">
@@ -320,10 +321,14 @@
             </button>
           </div>
 
-          <!-- Visor de Google Drive con ?rm=minimal (oculta botones de descarga/compartir) -->
-          <div style="position: relative; width: 100%; flex: 1; overflow: hidden;">
+          <!-- Contenedor del Visor con máscara de recorte -->
+          <div style="position: relative; width: 100%; flex: 1; overflow: hidden; background: white;">
+            <!-- Capa invisible de bloqueo por seguridad extra -->
+            <div style="position: absolute; top: 0; right: 0; width: 90px; height: 60px; z-index: 30; background: transparent;"></div>
+            
+            <!-- Iframe con desplazamiento superior negativo para ocultar la barra de herramientas de Google -->
             <iframe id="visorDrive" src="" 
-              style="width: 100%; height: 100%; border: none; background: white;">
+              style="position: absolute; top: -50px; left: 0; width: 100%; height: calc(100% + 50px); border: none; background: white;">
             </iframe>
           </div>
         </div>
@@ -357,7 +362,6 @@
           </div>
         `;
 
-        // Asignamos el evento de clic de forma directa y limpia
         item.onclick = function() {
           abrirGuia(guia, item);
         };
@@ -365,12 +369,13 @@
         lista.appendChild(item);
       });
 
-      // Seleccionamos la primera guía por defecto al iniciar sesión
       if (guiasDelComprador.length > 0) {
         const primerItem = lista.firstChild;
         abrirGuia(guiasDelComprador[0], primerItem);
       }
     }
+
+    
 
     // ============================================================
     // 5. ABRIR GUÍA (ACTUALIZA EL VISOR EXISTENTE AL INSTANTE)
@@ -436,6 +441,7 @@
       }
     }
   </script>
+
 
 </body>
 </html>
